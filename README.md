@@ -28,7 +28,6 @@ Wind 截图
 2. LLM Financial Agent
 
 不再只是 OCR，而是让 Agent 判断：
-
 “RB库存512.3万吨”
         ↓
 RB库存
@@ -53,7 +52,7 @@ RB库存
 碳酸锂价格
 CPI
 PPI
-
+...
 并支持：
 
 标准名称
@@ -69,7 +68,6 @@ PPI
 4. Structured Output
 
 Agent 不允许自由发挥 JSON，而是按照严格 Schema 输出：
-
 indicator
 date
 value
