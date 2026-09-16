@@ -1,0 +1,5936 @@
+{
+  "summary": {
+    "label": "live",
+    "base_url": "http://127.0.0.1:8502",
+    "llm_enabled": true,
+    "dependency_ok": true,
+    "dependency_reason": "ok",
+    "model": "deepseek-flash",
+    "total": 50,
+    "runnable": 50,
+    "blocked": 0,
+    "passed": 49,
+    "failed": 1,
+    "errors": 0,
+    "generated_at": "2026-09-15 12:02:13"
+  },
+  "results": [
+    {
+      "id": "TC-001",
+      "category": "text_extraction",
+      "severity": "P0",
+      "title": "螺纹钢社会库存-完整单条",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 4558.0,
+      "n_records": 1,
+      "hard_total": 11,
+      "hard_pass": 11,
+      "soft_total": 3,
+      "soft_pass": 3,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].standard_indicator",
+          "expected": "螺纹钢社会库存",
+          "actual": "螺纹钢社会库存",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].category",
+          "expected": "商品/库存",
+          "actual": "商品/库存",
+          "ok": true,
+          "hard": false,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 512.34,
+          "actual": 512.34,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": "万吨",
+          "actual": "万吨",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "date",
+          "field": "记录[1].date",
+          "expected": "2026-09-11",
+          "actual": "2026-09-11",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.type",
+          "expected": [
+            "周环比"
+          ],
+          "actual": "周环比",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.value",
+          "expected": -12.5,
+          "actual": -12.5,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].status",
+          "expected": "ready",
+          "actual": "ready",
+          "ok": true,
+          "hard": false,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].confidence",
+          "expected": ">=0.95",
+          "actual": 0.98,
+          "ok": true,
+          "hard": false,
+          "note": ""
+        }
+      ],
+      "input": "截至2026年9月11日，螺纹钢社会库存为512.34万吨，较上周减少12.5万吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹钢社会库存",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": "2026-09-11",
+            "value": 512.34,
+            "original_value": "512.34万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "周环比",
+              "value": -12.5,
+              "unit": "万吨"
+            },
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "截至2026年9月11日，螺纹钢社会库存为512.34万吨，较上周减少12.5万吨。",
+            "confidence": 0.98,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.6667
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "截至2026年9月11日，螺纹钢社会库存为512.34万吨，较上周减少12.5万吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-002",
+      "category": "text_extraction",
+      "severity": "P0",
+      "title": "螺纹钢厂库-完整单条",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 4992.0,
+      "n_records": 1,
+      "hard_total": 11,
+      "hard_pass": 11,
+      "soft_total": 2,
+      "soft_pass": 2,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_MILL_INVENTORY",
+          "expected": "COMMODITY_REBAR_MILL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_MILL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_REBAR_MILL_INVENTORY",
+          "actual": "COMMODITY_REBAR_MILL_INVENTORY",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].standard_indicator",
+          "expected": "螺纹钢厂库",
+          "actual": "螺纹钢厂库",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 198.6,
+          "actual": 198.6,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": "万吨",
+          "actual": "万吨",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "date",
+          "field": "记录[1].date",
+          "expected": "2026-09-11",
+          "actual": "2026-09-11",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.type",
+          "expected": [
+            "周环比"
+          ],
+          "actual": "周环比",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.value",
+          "expected": 3.2,
+          "actual": 3.2,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].status",
+          "expected": "ready",
+          "actual": "ready",
+          "ok": true,
+          "hard": false,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].confidence",
+          "expected": ">=0.95",
+          "actual": 0.99,
+          "ok": true,
+          "hard": false,
+          "note": ""
+        }
+      ],
+      "input": "2026年9月11日，螺纹钢厂库报198.6万吨，周环比增加3.2万吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹钢厂库",
+            "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+            "standard_indicator": "螺纹钢厂库",
+            "category": "商品/库存",
+            "date": "2026-09-11",
+            "value": 198.6,
+            "original_value": "198.6万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "周环比",
+              "value": 3.2,
+              "unit": "万吨"
+            },
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "螺纹钢厂库报198.6万吨，周环比增加3.2万吨。",
+            "confidence": 0.99,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 0.8
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "2026年9月11日，螺纹钢厂库报198.6万吨，周环比增加3.2万吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-003",
+      "category": "text_extraction",
+      "severity": "P0",
+      "title": "秦皇岛港煤炭库存-日频",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 5871.9,
+      "n_records": 1,
+      "hard_total": 11,
+      "hard_pass": 11,
+      "soft_total": 2,
+      "soft_pass": 2,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_QHD_PORT_COAL_INVENTORY",
+          "expected": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+          "actual": [
+            "COMMODITY_QHD_PORT_COAL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+          "actual": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].standard_indicator",
+          "expected": "秦皇岛港煤炭库存",
+          "actual": "秦皇岛港煤炭库存",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 612,
+          "actual": 612,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": "万吨",
+          "actual": "万吨",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "date",
+          "field": "记录[1].date",
+          "expected": "2026-09-14",
+          "actual": "2026-09-14",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.type",
+          "expected": [
+            "日环比"
+          ],
+          "actual": "日环比",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.value",
+          "expected": -8,
+          "actual": -8,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].status",
+          "expected": "ready",
+          "actual": "ready",
+          "ok": true,
+          "hard": false,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].confidence",
+          "expected": ">=0.95",
+          "actual": 0.99,
+          "ok": true,
+          "hard": false,
+          "note": ""
+        }
+      ],
+      "input": "2026-09-14，秦皇岛港煤炭库存612万吨，日环比下降8万吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "秦皇岛港煤炭库存",
+            "indicator_id": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+            "standard_indicator": "秦皇岛港煤炭库存",
+            "category": "商品/库存",
+            "date": "2026-09-14",
+            "value": 612,
+            "original_value": "612万吨",
+            "unit": "万吨",
+            "frequency": "daily",
+            "change": {
+              "type": "日环比",
+              "value": -8,
+              "unit": "万吨"
+            },
+            "market": null,
+            "region": "秦皇岛",
+            "source": null,
+            "evidence": "秦皇岛港煤炭库存612万吨，日环比下降8万吨",
+            "confidence": 0.99,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+                "standard_name": "秦皇岛港煤炭库存",
+                "score": 1.0
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "2026-09-14，秦皇岛港煤炭库存612万吨，日环比下降8万吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-004",
+      "category": "text_extraction",
+      "severity": "P0",
+      "title": "碳酸锂价格-日频",
+      "status": "FAIL",
+      "http_status": 200,
+      "latency_ms": 4211.5,
+      "n_records": 1,
+      "hard_total": 11,
+      "hard_pass": 10,
+      "soft_total": 2,
+      "soft_pass": 2,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "expected": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "actual": [
+            "COMMODITY_LITHIUM_CARBONATE_PRICE"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "actual": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].standard_indicator",
+          "expected": "碳酸锂价格",
+          "actual": "碳酸锂价格",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 73500,
+          "actual": 73500,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": "元/吨",
+          "actual": "元/吨",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "date",
+          "field": "记录[1].date",
+          "expected": "2026-09-14",
+          "actual": "2026-09-14",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.type",
+          "expected": [
+            "日环比",
+            "环比"
+          ],
+          "actual": "较前一交易日",
+          "ok": false,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.value",
+          "expected": -500,
+          "actual": -500,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].status",
+          "expected": "ready",
+          "actual": "ready",
+          "ok": true,
+          "hard": false,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].confidence",
+          "expected": ">=0.95",
+          "actual": 0.95,
+          "ok": true,
+          "hard": false,
+          "note": ""
+        }
+      ],
+      "input": "2026年9月14日，电池级碳酸锂现货价格为73500元/吨，较前一交易日下跌500元/吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "电池级碳酸锂现货价格",
+            "indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+            "standard_indicator": "碳酸锂价格",
+            "category": "商品/价格",
+            "date": "2026-09-14",
+            "value": 73500,
+            "original_value": "73500元/吨",
+            "unit": "元/吨",
+            "frequency": "daily",
+            "change": {
+              "type": "较前一交易日",
+              "value": -500,
+              "unit": "元/吨"
+            },
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "2026年9月14日，电池级碳酸锂现货价格为73500元/吨，较前一交易日下跌500元/吨。",
+            "confidence": 0.95,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+                "standard_name": "碳酸锂价格",
+                "score": 0.8889
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "2026年9月14日，电池级碳酸锂现货价格为73500元/吨，较前一交易日下跌500元/吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-005",
+      "category": "text_extraction",
+      "severity": "P0",
+      "title": "CPI-同比",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 3665.5,
+      "n_records": 1,
+      "hard_total": 11,
+      "hard_pass": 11,
+      "soft_total": 2,
+      "soft_pass": 2,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 2]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 MACRO_CPI",
+          "expected": "MACRO_CPI",
+          "actual": [
+            "MACRO_CPI"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "MACRO_CPI",
+          "actual": "MACRO_CPI",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].standard_indicator",
+          "expected": "居民消费价格指数",
+          "actual": "居民消费价格指数",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].category",
+          "expected": "宏观/价格",
+          "actual": "宏观/价格",
+          "ok": true,
+          "hard": false,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 0.6,
+          "actual": 0.6,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": "%",
+          "actual": "%",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "date",
+          "field": "记录[1].date",
+          "expected": [
+            "2026-08",
+            "2026-08-01"
+          ],
+          "actual": "2026-08",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.type",
+          "expected": [
+            "同比"
+          ],
+          "actual": "同比",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.value",
+          "expected": 0.6,
+          "actual": 0.6,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].status",
+          "expected": "ready",
+          "actual": "ready",
+          "ok": true,
+          "hard": false,
+          "note": ""
+        }
+      ],
+      "input": "国家统计局发布：2026年8月，全国居民消费价格指数（CPI）同比上涨0.6%。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "全国居民消费价格指数（CPI）",
+            "indicator_id": "MACRO_CPI",
+            "standard_indicator": "居民消费价格指数",
+            "category": "宏观/价格",
+            "date": "2026-08",
+            "value": 0.6,
+            "original_value": "同比上涨0.6%",
+            "unit": "%",
+            "frequency": "monthly",
+            "change": {
+              "type": "同比",
+              "value": 0.6,
+              "unit": "%"
+            },
+            "market": null,
+            "region": "全国",
+            "source": "国家统计局",
+            "evidence": "国家统计局发布：2026年8月，全国居民消费价格指数（CPI）同比上涨0.6%。",
+            "confidence": 0.95,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "MACRO_CPI",
+                "standard_name": "居民消费价格指数",
+                "score": 0.88
+              }
+            ]
+          }
+        ],
+        "global_warnings": [
+          "原文为“同比上涨0.6%”，value与change均记录为该同比增速，未提供环比或绝对指数水平。",
+          "日期“2026年8月”年份为原文明确给出，按月频指标标准化为2026-08。"
+        ],
+        "input_type": "text",
+        "raw_text": "国家统计局发布：2026年8月，全国居民消费价格指数（CPI）同比上涨0.6%。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-006",
+      "category": "text_extraction",
+      "severity": "P0",
+      "title": "PPI-同比为负",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 3906.2,
+      "n_records": 1,
+      "hard_total": 11,
+      "hard_pass": 11,
+      "soft_total": 2,
+      "soft_pass": 2,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 2]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 MACRO_PPI",
+          "expected": "MACRO_PPI",
+          "actual": [
+            "MACRO_PPI"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "MACRO_PPI",
+          "actual": "MACRO_PPI",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].standard_indicator",
+          "expected": "工业生产者出厂价格指数",
+          "actual": "工业生产者出厂价格指数",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].category",
+          "expected": "宏观/价格",
+          "actual": "宏观/价格",
+          "ok": true,
+          "hard": false,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": -1.8,
+          "actual": -1.8,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": "%",
+          "actual": "%",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "date",
+          "field": "记录[1].date",
+          "expected": [
+            "2026-08",
+            "2026-08-01"
+          ],
+          "actual": "2026-08",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.type",
+          "expected": [
+            "同比"
+          ],
+          "actual": "同比",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.value",
+          "expected": -1.8,
+          "actual": -1.8,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].status",
+          "expected": "ready",
+          "actual": "ready",
+          "ok": true,
+          "hard": false,
+          "note": ""
+        }
+      ],
+      "input": "2026年8月，全国工业生产者出厂价格指数（PPI）同比下降1.8%。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "全国工业生产者出厂价格指数（PPI）",
+            "indicator_id": "MACRO_PPI",
+            "standard_indicator": "工业生产者出厂价格指数",
+            "category": "宏观/价格",
+            "date": "2026-08",
+            "value": -1.8,
+            "original_value": "同比下降1.8%",
+            "unit": "%",
+            "frequency": "monthly",
+            "change": {
+              "type": "同比",
+              "value": -1.8,
+              "unit": "%"
+            },
+            "market": null,
+            "region": "全国",
+            "source": null,
+            "evidence": "2026年8月，全国工业生产者出厂价格指数（PPI）同比下降1.8%。",
+            "confidence": 0.99,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "MACRO_PPI",
+                "standard_name": "工业生产者出厂价格指数",
+                "score": 0.88
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "2026年8月，全国工业生产者出厂价格指数（PPI）同比下降1.8%。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-007",
+      "category": "text_extraction",
+      "severity": "P0",
+      "title": "别名归一-RB库存（无年份）",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 7224.8,
+      "n_records": 1,
+      "hard_total": 11,
+      "hard_pass": 11,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].standard_indicator",
+          "expected": "螺纹钢社会库存",
+          "actual": "螺纹钢社会库存",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 512.34,
+          "actual": 512.34,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": "万吨",
+          "actual": "万吨",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "记录[1].date",
+          "expected": null,
+          "actual": null,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].status",
+          "expected": "pending_review",
+          "actual": "pending_review",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "warnings",
+          "field": "记录[1].warnings⊇\"缺少完整日期\"",
+          "expected": "缺少完整日期",
+          "actual": [
+            "日期缺少年份，date=null",
+            "原文未提供变化量，change=null",
+            "缺少完整日期"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "截至9月11日当周，RB库存降至512.34万吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "RB库存",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": null,
+            "value": 512.34,
+            "original_value": "512.34万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": null,
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "截至9月11日当周，RB库存降至512.34万吨。",
+            "confidence": 0.9,
+            "status": "pending_review",
+            "warnings": [
+              "日期缺少年份，date=null",
+              "原文未提供变化量，change=null",
+              "缺少完整日期"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+                "standard_name": "秦皇岛港煤炭库存",
+                "score": 0.5
+              }
+            ]
+          }
+        ],
+        "global_warnings": [
+          "日期缺少年份，未推断年份"
+        ],
+        "input_type": "text",
+        "raw_text": "截至9月11日当周，RB库存降至512.34万吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-008",
+      "category": "text_extraction",
+      "severity": "P1",
+      "title": "别名归一-螺纹社库",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 8800.5,
+      "n_records": 1,
+      "hard_total": 8,
+      "hard_pass": 8,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 512.34,
+          "actual": 512.34,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": "万吨",
+          "actual": "万吨",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.value",
+          "expected": -12.5,
+          "actual": -12.5,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "螺纹社库最新报512.34万吨，较上周减少12.5万吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹社库",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": null,
+            "value": 512.34,
+            "original_value": "512.34万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "周环比",
+              "value": -12.5,
+              "unit": "万吨"
+            },
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "螺纹社库最新报512.34万吨，较上周减少12.5万吨。",
+            "confidence": 0.93,
+            "status": "pending_review",
+            "warnings": [
+              "原文仅称“最新”，未给出具体日期（无年份/月/日），无法确定date，date=null",
+              "change的周环比类型由“较上周”推导，减少已记为负值",
+              "缺少完整日期"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.75
+              }
+            ]
+          }
+        ],
+        "global_warnings": [
+          "原文缺少明确日期、数据来源及市场/地域信息，相关字段置空，建议补充原始发布日期与发布机构后再入库",
+          "库存单位“万吨”原文明确，与知识库默认单位一致，未做推断补齐"
+        ],
+        "input_type": "text",
+        "raw_text": "螺纹社库最新报512.34万吨，较上周减少12.5万吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-009",
+      "category": "text_extraction",
+      "severity": "P1",
+      "title": "别名归一-秦港库存",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 5844.1,
+      "n_records": 1,
+      "hard_total": 9,
+      "hard_pass": 9,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_QHD_PORT_COAL_INVENTORY",
+          "expected": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+          "actual": [
+            "COMMODITY_QHD_PORT_COAL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+          "actual": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].standard_indicator",
+          "expected": "秦皇岛港煤炭库存",
+          "actual": "秦皇岛港煤炭库存",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 612,
+          "actual": 612,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": "万吨",
+          "actual": "万吨",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "记录[1].date",
+          "expected": null,
+          "actual": null,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "秦港库存612万吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "秦港库存",
+            "indicator_id": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+            "standard_indicator": "秦皇岛港煤炭库存",
+            "category": "商品/库存",
+            "date": null,
+            "value": 612,
+            "original_value": "612万吨",
+            "unit": "万吨",
+            "frequency": "daily",
+            "change": null,
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "秦港库存612万吨。",
+            "confidence": 0.95,
+            "status": "pending_review",
+            "warnings": [
+              "原文未提供日期，date=null",
+              "缺少数据时点，需补充日期后确认",
+              "缺少完整日期"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+                "standard_name": "秦皇岛港煤炭库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 0.5
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "秦港库存612万吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-010",
+      "category": "text_extraction",
+      "severity": "P1",
+      "title": "单位归一-万元/吨→元/吨",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 4770.3,
+      "n_records": 1,
+      "hard_total": 8,
+      "hard_pass": 8,
+      "soft_total": 1,
+      "soft_pass": 1,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "expected": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "actual": [
+            "COMMODITY_LITHIUM_CARBONATE_PRICE"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "actual": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 73500,
+          "actual": 73500,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": [
+            "元/吨",
+            "万元/吨"
+          ],
+          "actual": "元/吨",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "date",
+          "field": "记录[1].date",
+          "expected": "2026-09-14",
+          "actual": "2026-09-14",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].original_value⊇\"万元\"",
+          "expected": "万元",
+          "actual": "7.35万元/吨",
+          "ok": true,
+          "hard": false,
+          "note": ""
+        }
+      ],
+      "input": "2026年9月14日，锂价报7.35万元/吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "锂价",
+            "indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+            "standard_indicator": "碳酸锂价格",
+            "category": "商品/价格",
+            "date": "2026-09-14",
+            "value": 73500,
+            "original_value": "7.35万元/吨",
+            "unit": "元/吨",
+            "frequency": "daily",
+            "change": null,
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "2026年9月14日，锂价报7.35万元/吨。",
+            "confidence": 0.95,
+            "status": "ready",
+            "warnings": [
+              "原始单位为万元/吨，已按知识库默认单位换算为元/吨"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+                "standard_name": "碳酸锂价格",
+                "score": 1.0
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "2026年9月14日，锂价报7.35万元/吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-011",
+      "category": "text_extraction",
+      "severity": "P0",
+      "title": "防幻觉-完全无日期",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 9874.8,
+      "n_records": 1,
+      "hard_total": 10,
+      "hard_pass": 10,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 512.34,
+          "actual": 512.34,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": "万吨",
+          "actual": "万吨",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "记录[1].date",
+          "expected": null,
+          "actual": null,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].status",
+          "expected": "pending_review",
+          "actual": "pending_review",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "warnings",
+          "field": "记录[1].warnings⊇\"缺少完整日期\"",
+          "expected": "缺少完整日期",
+          "actual": [
+            "缺少日期，无法确定数据时点",
+            "缺少完整日期"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "螺纹钢社会库存512.34万吨，较上周减少12.5万吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹钢社会库存",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": null,
+            "value": 512.34,
+            "original_value": "512.34万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "周环比",
+              "value": -12.5,
+              "unit": "万吨"
+            },
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "螺纹钢社会库存512.34万吨，较上周减少12.5万吨。",
+            "confidence": 0.95,
+            "status": "pending_review",
+            "warnings": [
+              "缺少日期，无法确定数据时点",
+              "缺少完整日期"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.6667
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "螺纹钢社会库存512.34万吨，较上周减少12.5万吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-012",
+      "category": "text_extraction",
+      "severity": "P0",
+      "title": "防幻觉-有月日无年份",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 4591.0,
+      "n_records": 1,
+      "hard_total": 9,
+      "hard_pass": 9,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_MILL_INVENTORY",
+          "expected": "COMMODITY_REBAR_MILL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_MILL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_REBAR_MILL_INVENTORY",
+          "actual": "COMMODITY_REBAR_MILL_INVENTORY",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 198.6,
+          "actual": 198.6,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": "万吨",
+          "actual": "万吨",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "记录[1].date",
+          "expected": null,
+          "actual": null,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].status",
+          "expected": "pending_review",
+          "actual": "pending_review",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "9月11日，螺纹钢厂库198.6万吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹钢厂库",
+            "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+            "standard_indicator": "螺纹钢厂库",
+            "category": "商品/库存",
+            "date": null,
+            "value": 198.6,
+            "original_value": "198.6万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": null,
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "螺纹钢厂库198.6万吨",
+            "confidence": 0.95,
+            "status": "pending_review",
+            "warnings": [
+              "日期“9月11日”未包含年份，无法确定具体年份，date=null",
+              "缺少完整日期"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 0.8
+              }
+            ]
+          }
+        ],
+        "global_warnings": [
+          "输入中日期未包含年份，无法确定具体日期年份。"
+        ],
+        "input_type": "text",
+        "raw_text": "9月11日，螺纹钢厂库198.6万吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-013",
+      "category": "text_extraction",
+      "severity": "P1",
+      "title": "防幻觉-相对时间（昨日）",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 5013.5,
+      "n_records": 1,
+      "hard_total": 9,
+      "hard_pass": 9,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_QHD_PORT_COAL_INVENTORY",
+          "expected": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+          "actual": [
+            "COMMODITY_QHD_PORT_COAL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+          "actual": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 612,
+          "actual": 612,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": "万吨",
+          "actual": "万吨",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "记录[1].date",
+          "expected": null,
+          "actual": null,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].status",
+          "expected": "pending_review",
+          "actual": "pending_review",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "昨日秦皇岛港煤炭库存612万吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "秦皇岛港煤炭库存",
+            "indicator_id": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+            "standard_indicator": "秦皇岛港煤炭库存",
+            "category": "商品/库存",
+            "date": null,
+            "value": 612,
+            "original_value": "612万吨",
+            "unit": "万吨",
+            "frequency": "daily",
+            "change": null,
+            "market": null,
+            "region": "秦皇岛港",
+            "source": "用户输入",
+            "evidence": "秦皇岛港煤炭库存612万吨",
+            "confidence": 0.95,
+            "status": "pending_review",
+            "warnings": [
+              "原文仅含“昨日”，没有具体日期/年份，无法确定绝对日期",
+              "缺少完整日期"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+                "standard_name": "秦皇岛港煤炭库存",
+                "score": 1.0
+              }
+            ]
+          }
+        ],
+        "global_warnings": [
+          "日期缺失：原文使用“昨日”，未提供具体日期或年份，未推断日期"
+        ],
+        "input_type": "text",
+        "raw_text": "昨日秦皇岛港煤炭库存612万吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-014",
+      "category": "text_extraction",
+      "severity": "P1",
+      "title": "防幻觉-模糊时间表述",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 6507.4,
+      "n_records": 1,
+      "hard_total": 9,
+      "hard_pass": 9,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "expected": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "actual": [
+            "COMMODITY_LITHIUM_CARBONATE_PRICE"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "actual": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 73500,
+          "actual": 73500,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": "元/吨",
+          "actual": "元/吨",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "记录[1].date",
+          "expected": null,
+          "actual": null,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].status",
+          "expected": "pending_review",
+          "actual": "pending_review",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "最新数据显示，碳酸锂价格73500元/吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "碳酸锂价格",
+            "indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+            "standard_indicator": "碳酸锂价格",
+            "category": "商品/价格",
+            "date": null,
+            "value": 73500,
+            "original_value": "73500元/吨",
+            "unit": "元/吨",
+            "frequency": "daily",
+            "change": null,
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "碳酸锂价格73500元/吨",
+            "confidence": 0.9,
+            "status": "pending_review",
+            "warnings": [
+              "原文未提供具体日期，date=null",
+              "“最新”无法确定具体数据日期，需人工复核时效",
+              "缺少完整日期"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+                "standard_name": "碳酸锂价格",
+                "score": 1.0
+              }
+            ]
+          }
+        ],
+        "global_warnings": [
+          "输入未提供数据日期，相关记录已标记为pending_review"
+        ],
+        "input_type": "text",
+        "raw_text": "最新数据显示，碳酸锂价格73500元/吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-015",
+      "category": "text_extraction",
+      "severity": "P0",
+      "title": "防幻觉-只有月份无年份",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 5803.2,
+      "n_records": 1,
+      "hard_total": 9,
+      "hard_pass": 9,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 MACRO_CPI",
+          "expected": "MACRO_CPI",
+          "actual": [
+            "MACRO_CPI"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "MACRO_CPI",
+          "actual": "MACRO_CPI",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 0.6,
+          "actual": 0.6,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": "%",
+          "actual": "%",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "记录[1].date",
+          "expected": null,
+          "actual": null,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].status",
+          "expected": "pending_review",
+          "actual": "pending_review",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "8月CPI同比上涨0.6%。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "CPI",
+            "indicator_id": "MACRO_CPI",
+            "standard_indicator": "居民消费价格指数",
+            "category": "宏观/价格",
+            "date": null,
+            "value": 0.6,
+            "original_value": "0.6%",
+            "unit": "%",
+            "frequency": "monthly",
+            "change": {
+              "type": "同比",
+              "value": 0.6,
+              "unit": "%"
+            },
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "8月CPI同比上涨0.6%。",
+            "confidence": 0.95,
+            "status": "pending_review",
+            "warnings": [
+              "日期“8月”缺少年份，无法确定具体年份，date=null。",
+              "缺少完整日期"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "MACRO_CPI",
+                "standard_name": "居民消费价格指数",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "MACRO_PPI",
+                "standard_name": "工业生产者出厂价格指数",
+                "score": 0.6667
+              }
+            ]
+          }
+        ],
+        "global_warnings": [
+          "输入中的日期“8月”缺少年份，无法可靠推导具体年份，已置date=null。"
+        ],
+        "input_type": "text",
+        "raw_text": "8月CPI同比上涨0.6%。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-016",
+      "category": "text_extraction",
+      "severity": "P0",
+      "title": "变化量-同比下降保留负号",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 2859.3,
+      "n_records": 1,
+      "hard_total": 8,
+      "hard_pass": 8,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 MACRO_CPI",
+          "expected": "MACRO_CPI",
+          "actual": [
+            "MACRO_CPI"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "MACRO_CPI",
+          "actual": "MACRO_CPI",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": -0.3,
+          "actual": -0.3,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.type",
+          "expected": [
+            "同比"
+          ],
+          "actual": "同比",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.value",
+          "expected": -0.3,
+          "actual": -0.3,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "2026年8月，CPI同比下降0.3%。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "CPI",
+            "indicator_id": "MACRO_CPI",
+            "standard_indicator": "居民消费价格指数",
+            "category": "宏观/价格",
+            "date": "2026-08",
+            "value": -0.3,
+            "original_value": "同比下降0.3%",
+            "unit": "%",
+            "frequency": "monthly",
+            "change": {
+              "type": "同比",
+              "value": -0.3,
+              "unit": "%"
+            },
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "2026年8月，CPI同比下降0.3%。",
+            "confidence": 0.99,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "MACRO_CPI",
+                "standard_name": "居民消费价格指数",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "MACRO_PPI",
+                "standard_name": "工业生产者出厂价格指数",
+                "score": 0.6667
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "2026年8月，CPI同比下降0.3%。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-017",
+      "category": "text_extraction",
+      "severity": "P1",
+      "title": "变化量-环比上涨",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 2049.8,
+      "n_records": 1,
+      "hard_total": 7,
+      "hard_pass": 7,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 MACRO_CPI",
+          "expected": "MACRO_CPI",
+          "actual": [
+            "MACRO_CPI"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "MACRO_CPI",
+          "actual": "MACRO_CPI",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.type",
+          "expected": [
+            "环比"
+          ],
+          "actual": "环比",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.value",
+          "expected": 0.2,
+          "actual": 0.2,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "2026年8月，CPI环比上涨0.2%。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "CPI",
+            "indicator_id": "MACRO_CPI",
+            "standard_indicator": "居民消费价格指数",
+            "category": "宏观/价格",
+            "date": "2026-08",
+            "value": 0.2,
+            "original_value": "环比上涨0.2%",
+            "unit": "%",
+            "frequency": "monthly",
+            "change": {
+              "type": "环比",
+              "value": 0.2,
+              "unit": "%"
+            },
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "2026年8月，CPI环比上涨0.2%。",
+            "confidence": 0.95,
+            "status": "ready",
+            "warnings": [
+              "日期仅精确到月份（2026年8月），无法确定具体日期"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "MACRO_CPI",
+                "standard_name": "居民消费价格指数",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "MACRO_PPI",
+                "standard_name": "工业生产者出厂价格指数",
+                "score": 0.6667
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "2026年8月，CPI环比上涨0.2%。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-018",
+      "category": "text_extraction",
+      "severity": "P1",
+      "title": "变化量-周环比减少",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 2425.5,
+      "n_records": 1,
+      "hard_total": 7,
+      "hard_pass": 7,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.type",
+          "expected": [
+            "周环比"
+          ],
+          "actual": "周环比",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.value",
+          "expected": -12.5,
+          "actual": -12.5,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "截至2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹钢社会库存",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": "2026-09-11",
+            "value": 512.34,
+            "original_value": "512.34万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "周环比",
+              "value": -12.5,
+              "unit": "万吨"
+            },
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "截至2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。",
+            "confidence": 0.98,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.6667
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "截至2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-019",
+      "category": "text_extraction",
+      "severity": "P1",
+      "title": "变化量-较前一日下跌",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 3301.1,
+      "n_records": 1,
+      "hard_total": 6,
+      "hard_pass": 6,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "expected": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "actual": [
+            "COMMODITY_LITHIUM_CARBONATE_PRICE"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "actual": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "change",
+          "field": "记录[1].change.value",
+          "expected": -500,
+          "actual": -500,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "2026年9月14日碳酸锂价格73500元/吨，较前一日下跌500元/吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "碳酸锂价格",
+            "indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+            "standard_indicator": "碳酸锂价格",
+            "category": "商品/价格",
+            "date": "2026-09-14",
+            "value": 73500,
+            "original_value": "73500元/吨",
+            "unit": "元/吨",
+            "frequency": "daily",
+            "change": {
+              "type": "较前一日",
+              "value": -500,
+              "unit": "元/吨"
+            },
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "2026年9月14日碳酸锂价格73500元/吨，较前一日下跌500元/吨。",
+            "confidence": 0.98,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+                "standard_name": "碳酸锂价格",
+                "score": 1.0
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "2026年9月14日碳酸锂价格73500元/吨，较前一日下跌500元/吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-020",
+      "category": "text_extraction",
+      "severity": "P1",
+      "title": "单位-缺失但知识库可补默认单位",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 3132.6,
+      "n_records": 1,
+      "hard_total": 7,
+      "hard_pass": 7,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 512.34,
+          "actual": 512.34,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": [
+            "万吨",
+            null
+          ],
+          "actual": "万吨",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "2026年9月11日，螺纹钢社会库存512.34。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹钢社会库存",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": "2026-09-11",
+            "value": 512.34,
+            "original_value": "512.34",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": null,
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "2026年9月11日，螺纹钢社会库存512.34。",
+            "confidence": 0.95,
+            "status": "ready",
+            "warnings": [
+              "单位“万吨”未在原文出现，依据指标知识库默认单位补齐（无冲突）",
+              "原文未提供数据来源，source=null"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.6667
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "2026年9月11日，螺纹钢社会库存512.34。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-021",
+      "category": "text_extraction",
+      "severity": "P1",
+      "title": "单位-与知识库默认单位冲突（千吨）",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 11074.1,
+      "n_records": 1,
+      "hard_total": 6,
+      "hard_pass": 6,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": [
+            "千吨",
+            "万吨"
+          ],
+          "actual": "千吨",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "2026年9月11日，螺纹钢社会库存512.34千吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹钢社会库存",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": "2026-09-11",
+            "value": 512.34,
+            "original_value": "512.34千吨",
+            "unit": "千吨",
+            "frequency": "weekly",
+            "change": null,
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "2026年9月11日，螺纹钢社会库存512.34千吨。",
+            "confidence": 0.99,
+            "status": "ready",
+            "warnings": [
+              "输入单位为千吨，与知识库默认单位万吨不一致，未自动换算。"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.6667
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "2026年9月11日，螺纹钢社会库存512.34千吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-022",
+      "category": "text_extraction",
+      "severity": "P2",
+      "title": "单位-非知识库指标且无单位",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 3678.5,
+      "n_records": 1,
+      "hard_total": 6,
+      "hard_pass": 6,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "记录[1].indicator_id",
+          "expected": null,
+          "actual": null,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": null,
+          "actual": null,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "记录[1].status",
+          "expected": "pending_review",
+          "actual": "pending_review",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "2026年9月11日，电解铝社会库存52.3。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "电解铝社会库存",
+            "indicator_id": null,
+            "standard_indicator": null,
+            "category": null,
+            "date": "2026-09-11",
+            "value": 52.3,
+            "original_value": "52.3",
+            "unit": null,
+            "frequency": null,
+            "change": null,
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "2026年9月11日，电解铝社会库存52.3。",
+            "confidence": 0.55,
+            "status": "pending_review",
+            "warnings": [
+              "指标“电解铝社会库存”不在指标知识库中，无法映射 indicator_id，standard_indicator 置空",
+              "原文未给出库存单位，知识库中亦无电解铝库存的默认单位，unit 置空",
+              "原文未给出数据频率，不做推断，frequency 置空",
+              "原文未指明市场/地区范围，market、region 置空",
+              "仅有单期数值，无同比/环比信息，change 置空",
+              "缺少单位"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 0.6154
+              }
+            ]
+          }
+        ],
+        "global_warnings": [
+          "输入中“电解铝社会库存”在现有指标知识库（螺纹钢社库/厂库、秦皇岛港煤炭库存、碳酸锂价格、CPI、PPI）中无匹配项，需人工补充指标定义或扩展知识库",
+          "数值 52.3 缺少单位，无法确认量纲（万吨/万吨或其他），建议核对原始数据源"
+        ],
+        "input_type": "text",
+        "raw_text": "2026年9月11日，电解铝社会库存52.3。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-023",
+      "category": "text_extraction",
+      "severity": "P2",
+      "title": "单位-文本中显式标注单位",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 2559.0,
+      "n_records": 1,
+      "hard_total": 7,
+      "hard_pass": 7,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 512.34,
+          "actual": 512.34,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "unit",
+          "field": "记录[1].unit",
+          "expected": "万吨",
+          "actual": "万吨",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "2026年9月11日，螺纹钢社会库存512.34，单位：万吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹钢社会库存",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": "2026-09-11",
+            "value": 512.34,
+            "original_value": "512.34",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": null,
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "2026年9月11日，螺纹钢社会库存512.34，单位：万吨。",
+            "confidence": 0.97,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.6667
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "2026年9月11日，螺纹钢社会库存512.34，单位：万吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-024",
+      "category": "text_extraction",
+      "severity": "P0",
+      "title": "多记录-一条新闻含三个指标",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 9498.9,
+      "n_records": 3,
+      "hard_total": 5,
+      "hard_pass": 5,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[3, 6]",
+          "actual": 3,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "COMMODITY_REBAR_MILL_INVENTORY",
+            "COMMODITY_QHD_PORT_COAL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_MILL_INVENTORY",
+          "expected": "COMMODITY_REBAR_MILL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "COMMODITY_REBAR_MILL_INVENTORY",
+            "COMMODITY_QHD_PORT_COAL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_QHD_PORT_COAL_INVENTORY",
+          "expected": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "COMMODITY_REBAR_MILL_INVENTORY",
+            "COMMODITY_QHD_PORT_COAL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨；螺纹钢厂库198.6万吨，周环比增加3.2万吨。2026年9月14日，秦皇岛港煤炭库存612万吨，日环比下降8万吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹钢社会库存",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": "2026-09-11",
+            "value": 512.34,
+            "original_value": "512.34万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "周环比",
+              "value": -12.5,
+              "unit": "万吨"
+            },
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨",
+            "confidence": 0.99,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.6667
+              }
+            ]
+          },
+          {
+            "raw_indicator": "螺纹钢厂库",
+            "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+            "standard_indicator": "螺纹钢厂库",
+            "category": "商品/库存",
+            "date": "2026-09-11",
+            "value": 198.6,
+            "original_value": "198.6万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "周环比",
+              "value": 3.2,
+              "unit": "万吨"
+            },
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "螺纹钢厂库198.6万吨，周环比增加3.2万吨",
+            "confidence": 0.99,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 0.8
+              }
+            ]
+          },
+          {
+            "raw_indicator": "秦皇岛港煤炭库存",
+            "indicator_id": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+            "standard_indicator": "秦皇岛港煤炭库存",
+            "category": "商品/库存",
+            "date": "2026-09-14",
+            "value": 612,
+            "original_value": "612万吨",
+            "unit": "万吨",
+            "frequency": "daily",
+            "change": {
+              "type": "日环比",
+              "value": -8,
+              "unit": "万吨"
+            },
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "2026年9月14日，秦皇岛港煤炭库存612万吨，日环比下降8万吨",
+            "confidence": 0.99,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+                "standard_name": "秦皇岛港煤炭库存",
+                "score": 1.0
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨；螺纹钢厂库198.6万吨，周环比增加3.2万吨。2026年9月14日，秦皇岛港煤炭库存612万吨，日环比下降8万吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-025",
+      "category": "text_extraction",
+      "severity": "P0",
+      "title": "多记录-宏观双指标同月",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 7032.3,
+      "n_records": 2,
+      "hard_total": 4,
+      "hard_pass": 4,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[2, 4]",
+          "actual": 2,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 MACRO_CPI",
+          "expected": "MACRO_CPI",
+          "actual": [
+            "MACRO_CPI",
+            "MACRO_PPI"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 MACRO_PPI",
+          "expected": "MACRO_PPI",
+          "actual": [
+            "MACRO_CPI",
+            "MACRO_PPI"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "2026年8月，CPI同比上涨0.6%，PPI同比下降1.8%。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "CPI",
+            "indicator_id": "MACRO_CPI",
+            "standard_indicator": "居民消费价格指数",
+            "category": "宏观/价格",
+            "date": "2026-08",
+            "value": 0.6,
+            "original_value": "同比上涨0.6%",
+            "unit": "%",
+            "frequency": "monthly",
+            "change": {
+              "type": "同比",
+              "value": 0.6,
+              "unit": "%"
+            },
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "2026年8月，CPI同比上涨0.6%",
+            "confidence": 0.95,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "MACRO_CPI",
+                "standard_name": "居民消费价格指数",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "MACRO_PPI",
+                "standard_name": "工业生产者出厂价格指数",
+                "score": 0.6667
+              }
+            ]
+          },
+          {
+            "raw_indicator": "PPI",
+            "indicator_id": "MACRO_PPI",
+            "standard_indicator": "工业生产者出厂价格指数",
+            "category": "宏观/价格",
+            "date": "2026-08",
+            "value": -1.8,
+            "original_value": "同比下降1.8%",
+            "unit": "%",
+            "frequency": "monthly",
+            "change": {
+              "type": "同比",
+              "value": -1.8,
+              "unit": "%"
+            },
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "PPI同比下降1.8%",
+            "confidence": 0.95,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "MACRO_PPI",
+                "standard_name": "工业生产者出厂价格指数",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "MACRO_CPI",
+                "standard_name": "居民消费价格指数",
+                "score": 0.6667
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "2026年8月，CPI同比上涨0.6%，PPI同比下降1.8%。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-026",
+      "category": "text_extraction",
+      "severity": "P1",
+      "title": "多记录-同一指标多期序列",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 3989.0,
+      "n_records": 2,
+      "hard_total": 5,
+      "hard_pass": 5,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[2, 2]",
+          "actual": 2,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "COMMODITY_REBAR_SOCIAL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "date",
+          "field": "含日期 2026-09-04",
+          "expected": "2026-09-04",
+          "actual": [
+            "2026-09-04",
+            "2026-09-11"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "date",
+          "field": "含日期 2026-09-11",
+          "expected": "2026-09-11",
+          "actual": [
+            "2026-09-04",
+            "2026-09-11"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "螺纹钢社会库存：2026年9月4日为524.84万吨，2026年9月11日为512.34万吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹钢社会库存",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": "2026-09-04",
+            "value": 524.84,
+            "original_value": "524.84万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": null,
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "螺纹钢社会库存：2026年9月4日为524.84万吨",
+            "confidence": 0.96,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.6667
+              }
+            ]
+          },
+          {
+            "raw_indicator": "螺纹钢社会库存",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": "2026-09-11",
+            "value": 512.34,
+            "original_value": "512.34万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "周环比",
+              "value": -12.5,
+              "unit": "万吨"
+            },
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "2026年9月11日为512.34万吨",
+            "confidence": 0.94,
+            "status": "pending_review",
+            "warnings": [
+              "change（周环比-12.5万吨）为依据2026-09-04与2026-09-11两期原文数据推导，非原文直接给出"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.6667
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "螺纹钢社会库存：2026年9月4日为524.84万吨，2026年9月11日为512.34万吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-027",
+      "category": "text_extraction",
+      "severity": "P1",
+      "title": "超纲指标-期货品种不在知识库",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 5840.0,
+      "n_records": 1,
+      "hard_total": 4,
+      "hard_pass": 4,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 2]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "记录[1].indicator_id",
+          "expected": null,
+          "actual": null,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "2026年9月14日，沪铜主力合约收于78230元/吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "沪铜主力合约",
+            "indicator_id": null,
+            "standard_indicator": null,
+            "category": null,
+            "date": "2026-09-14",
+            "value": 78230,
+            "original_value": "78230元/吨",
+            "unit": "元/吨",
+            "frequency": null,
+            "change": null,
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "2026年9月14日，沪铜主力合约收于78230元/吨。",
+            "confidence": 0.9,
+            "status": "pending_review",
+            "warnings": [
+              "指标不在知识库中，无法映射标准指标ID",
+              "未提供频率",
+              "未提供市场信息",
+              "未提供地区信息"
+            ],
+            "candidates": []
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "2026年9月14日，沪铜主力合约收于78230元/吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-028",
+      "category": "text_extraction",
+      "severity": "P0",
+      "title": "超纲指标-相近口径不可误映射",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 4613.5,
+      "n_records": 1,
+      "hard_total": 6,
+      "hard_pass": 6,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 2]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "不应出现指标 COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "expected": "不含 COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": [],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "不应出现指标 COMMODITY_REBAR_MILL_INVENTORY",
+          "expected": "不含 COMMODITY_REBAR_MILL_INVENTORY",
+          "actual": [],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "记录[1].indicator_id",
+          "expected": null,
+          "actual": null,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "2026年9月11日，螺纹钢表观消费量320.5万吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹钢表观消费量",
+            "indicator_id": null,
+            "standard_indicator": null,
+            "category": null,
+            "date": "2026-09-11",
+            "value": 320.5,
+            "original_value": "320.5万吨",
+            "unit": "万吨",
+            "frequency": null,
+            "change": null,
+            "market": null,
+            "region": null,
+            "source": null,
+            "evidence": "2026年9月11日，螺纹钢表观消费量320.5万吨。",
+            "confidence": 0.55,
+            "status": "pending_review",
+            "warnings": [
+              "指标“螺纹钢表观消费量”不在指标知识库中，indicator_id/standard_indicator/category 无法标准化，需人工确认口径",
+              "知识库中仅有螺纹钢社会库存、螺纹钢厂库，与“表观消费量”口径不同，候选匹配度低，请勿直接映射",
+              "原文未给出统计频率与数据来源，frequency/source 置空",
+              "原文未给出市场与地区范围，market/region 置空"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 0.4615
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.4615
+              }
+            ]
+          }
+        ],
+        "global_warnings": [
+          "输入仅含单条螺纹钢表观消费量数据，该指标未收录于知识库，结果标记为 pending_review",
+          "未提供数据来源，无法核实数值口径（是否含样本调整、是否周度均值等）"
+        ],
+        "input_type": "text",
+        "raw_text": "2026年9月11日，螺纹钢表观消费量320.5万吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-029",
+      "category": "text_extraction",
+      "severity": "P1",
+      "title": "超纲指标-股票指数",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 18490.5,
+      "n_records": 1,
+      "hard_total": 4,
+      "hard_pass": 4,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 2]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "记录[1].indicator_id",
+          "expected": null,
+          "actual": null,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "2026年9月14日，上证指数收报3421.55点。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "上证指数",
+            "indicator_id": null,
+            "standard_indicator": null,
+            "category": null,
+            "date": "2026-09-14",
+            "value": 3421.55,
+            "original_value": "3421.55点",
+            "unit": "点",
+            "frequency": "daily",
+            "change": null,
+            "market": "上海证券交易所",
+            "region": "中国",
+            "source": null,
+            "evidence": "2026年9月14日，上证指数收报3421.55点。",
+            "confidence": 0.95,
+            "status": "pending_review",
+            "warnings": [
+              "知识库未包含上证指数，indicator_id为空"
+            ],
+            "candidates": []
+          }
+        ],
+        "global_warnings": [
+          "知识库未包含上证指数，无法映射indicator_id"
+        ],
+        "input_type": "text",
+        "raw_text": "2026年9月14日，上证指数收报3421.55点。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-030",
+      "category": "text_extraction",
+      "severity": "P1",
+      "title": "噪声-纯寒暄无金融数据",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 1770.4,
+      "n_records": 0,
+      "hard_total": 3,
+      "hard_pass": 3,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[0, 0]",
+          "actual": 0,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "无金融数据时不得臆造记录",
+          "expected": 0,
+          "actual": 0,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "早上好，今天天气不错，适合出去走走。",
+      "error": null,
+      "response": {
+        "records": [],
+        "global_warnings": [
+          "输入文本为日常问候（“早上好，今天天气不错，适合出去走走。”），未包含任何可提取的金融数据。",
+          "未检测到指标名称、数值、单位、日期或同比/环比等变动信息，故不生成任何记录。"
+        ],
+        "input_type": "text",
+        "raw_text": "早上好，今天天气不错，适合出去走走。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-031",
+      "category": "text_extraction",
+      "severity": "P1",
+      "title": "噪声-无关公告无数据",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 1612.7,
+      "n_records": 0,
+      "hard_total": 3,
+      "hard_pass": 3,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[0, 0]",
+          "actual": 0,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "无金融数据时不得臆造记录",
+          "expected": 0,
+          "actual": 0,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "公司发布公告称，董事长因个人原因辞去职务，即日生效。",
+      "error": null,
+      "response": {
+        "records": [],
+        "global_warnings": [
+          "输入文本为公司董事长辞职的人事变动公告，未包含任何明确的金融数据（指标、数值、单位、日期），因此未生成结构化记录。",
+          "该文本属于公司治理/人事事件类信息，若需入库请使用事件类数据结构，而非指标数值抽取schema。"
+        ],
+        "input_type": "text",
+        "raw_text": "公司发布公告称，董事长因个人原因辞去职务，即日生效。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-032",
+      "category": "text_extraction",
+      "severity": "P2",
+      "title": "噪声-空文本",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 820.6,
+      "n_records": 0,
+      "hard_total": 3,
+      "hard_pass": 3,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[0, 0]",
+          "actual": 0,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "无金融数据时不得臆造记录",
+          "expected": 0,
+          "actual": 0,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "/api/v1/extract/text",
+      "error": null,
+      "response": {
+        "records": [],
+        "global_warnings": [
+          "输入内容为空，未提供任何截图、聊天、照片或OCR文本，无法提取金融数据。"
+        ],
+        "input_type": "text",
+        "raw_text": "",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-101",
+      "category": "image_extraction",
+      "severity": "P0",
+      "title": "图片-商品库存表格截图",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 3704.8,
+      "n_records": 2,
+      "hard_total": 4,
+      "hard_pass": 4,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[2, 6]",
+          "actual": 2,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "COMMODITY_REBAR_MILL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_MILL_INVENTORY",
+          "expected": "COMMODITY_REBAR_MILL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "COMMODITY_REBAR_MILL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "images/tc101_inventory_table.png",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹钢社会库存",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": "2026-09-11",
+            "value": 512.34,
+            "original_value": "512.34 万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "周环比",
+              "value": -12.5,
+              "unit": "万吨"
+            },
+            "market": null,
+            "region": null,
+            "source": "Mysteel 周报",
+            "evidence": "螺纹钢社会库存 512.34 万吨 周环比 -12.5 万吨",
+            "confidence": 0.95,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.6667
+              }
+            ]
+          },
+          {
+            "raw_indicator": "螺纹钢厂库",
+            "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+            "standard_indicator": "螺纹钢厂库",
+            "category": "商品/库存",
+            "date": "2026-09-11",
+            "value": 198.6,
+            "original_value": "198.60 万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "周环比",
+              "value": 3.2,
+              "unit": "万吨"
+            },
+            "market": null,
+            "region": null,
+            "source": "Mysteel 周报",
+            "evidence": "螺纹钢厂库 198.60 万吨 周环比 +3.2 万吨",
+            "confidence": 0.95,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 0.8
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "image",
+        "raw_text": null,
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-102",
+      "category": "image_extraction",
+      "severity": "P0",
+      "title": "图片-微信群聊截图",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 4832.2,
+      "n_records": 2,
+      "hard_total": 3,
+      "hard_pass": 3,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 4]",
+          "actual": 2,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "COMMODITY_REBAR_MILL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "images/tc102_chat.png",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹社库",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": null,
+            "value": 512.34,
+            "original_value": "512.34 万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "周环比",
+              "value": -12.5,
+              "unit": "万吨"
+            },
+            "market": "期货",
+            "region": null,
+            "source": "期货交流群聊天截图（张伟）",
+            "evidence": "螺纹社库这周 512.34 万吨，比上周少了 12.5 万吨。",
+            "confidence": 0.9,
+            "status": "pending_review",
+            "warnings": [
+              "原文仅说“这周”，未提供具体日期或周次，date=null",
+              "库存变化为“比上周少了 12.5 万吨”，按周环比处理并记为负值",
+              "缺少完整日期"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.75
+              }
+            ]
+          },
+          {
+            "raw_indicator": "螺纹厂库",
+            "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+            "standard_indicator": "螺纹钢厂库",
+            "category": "商品/库存",
+            "date": null,
+            "value": 198.6,
+            "original_value": "198.6 万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "周环比",
+              "value": 3.2,
+              "unit": "万吨"
+            },
+            "market": "期货",
+            "region": null,
+            "source": "期货交流群聊天截图（李娜）",
+            "evidence": "螺纹厂库 198.6 万吨，周环比增加 3.2 万吨。",
+            "confidence": 0.9,
+            "status": "pending_review",
+            "warnings": [
+              "原文未提供具体日期或周次，date=null",
+              "缺少完整日期"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 0.75
+              }
+            ]
+          }
+        ],
+        "global_warnings": [
+          "聊天记录未标注数据所属日期/统计周期，两条库存记录的date均为null",
+          "截图未提供数据发布机构，来源标注为聊天群消息，非官方口径"
+        ],
+        "input_type": "image",
+        "raw_text": null,
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-103",
+      "category": "image_extraction",
+      "severity": "P0",
+      "title": "图片-宏观数据发布截图",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 10795.3,
+      "n_records": 4,
+      "hard_total": 4,
+      "hard_pass": 4,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[2, 6]",
+          "actual": 4,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 MACRO_CPI",
+          "expected": "MACRO_CPI",
+          "actual": [
+            "MACRO_CPI",
+            "MACRO_CPI",
+            "MACRO_PPI",
+            "MACRO_PPI"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 MACRO_PPI",
+          "expected": "MACRO_PPI",
+          "actual": [
+            "MACRO_CPI",
+            "MACRO_CPI",
+            "MACRO_PPI",
+            "MACRO_PPI"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "images/tc103_macro.png",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "居民消费价格指数 (CPI)",
+            "indicator_id": "MACRO_CPI",
+            "standard_indicator": "居民消费价格指数",
+            "category": "宏观/价格",
+            "date": "2026-08",
+            "value": 0.6,
+            "original_value": "+0.6%",
+            "unit": "%",
+            "frequency": "monthly",
+            "change": {
+              "type": "同比",
+              "value": 0.6,
+              "unit": "%"
+            },
+            "market": null,
+            "region": "中国",
+            "source": "国家统计局",
+            "evidence": "居民消费价格指数 (CPI)　同比 +0.6%",
+            "confidence": 0.95,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "MACRO_CPI",
+                "standard_name": "居民消费价格指数",
+                "score": 0.88
+              }
+            ]
+          },
+          {
+            "raw_indicator": "居民消费价格指数 (CPI)",
+            "indicator_id": "MACRO_CPI",
+            "standard_indicator": "居民消费价格指数",
+            "category": "宏观/价格",
+            "date": "2026-08",
+            "value": 0.2,
+            "original_value": "+0.2%",
+            "unit": "%",
+            "frequency": "monthly",
+            "change": {
+              "type": "环比",
+              "value": 0.2,
+              "unit": "%"
+            },
+            "market": null,
+            "region": "中国",
+            "source": "国家统计局",
+            "evidence": "居民消费价格指数 (CPI)　环比 +0.2%",
+            "confidence": 0.95,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "MACRO_CPI",
+                "standard_name": "居民消费价格指数",
+                "score": 0.88
+              }
+            ]
+          },
+          {
+            "raw_indicator": "工业生产者出厂价格指数 (PPI)",
+            "indicator_id": "MACRO_PPI",
+            "standard_indicator": "工业生产者出厂价格指数",
+            "category": "宏观/价格",
+            "date": "2026-08",
+            "value": -1.8,
+            "original_value": "-1.8%",
+            "unit": "%",
+            "frequency": "monthly",
+            "change": {
+              "type": "同比",
+              "value": -1.8,
+              "unit": "%"
+            },
+            "market": null,
+            "region": "中国",
+            "source": "国家统计局",
+            "evidence": "工业生产者出厂价格指数 (PPI)　同比 -1.8%",
+            "confidence": 0.95,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "MACRO_PPI",
+                "standard_name": "工业生产者出厂价格指数",
+                "score": 0.88
+              }
+            ]
+          },
+          {
+            "raw_indicator": "工业生产者出厂价格指数 (PPI)",
+            "indicator_id": "MACRO_PPI",
+            "standard_indicator": "工业生产者出厂价格指数",
+            "category": "宏观/价格",
+            "date": "2026-08",
+            "value": -0.1,
+            "original_value": "-0.1%",
+            "unit": "%",
+            "frequency": "monthly",
+            "change": {
+              "type": "环比",
+              "value": -0.1,
+              "unit": "%"
+            },
+            "market": null,
+            "region": "中国",
+            "source": "国家统计局",
+            "evidence": "工业生产者出厂价格指数 (PPI)　环比 -0.1%",
+            "confidence": 0.95,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "MACRO_PPI",
+                "standard_name": "工业生产者出厂价格指数",
+                "score": 0.88
+              }
+            ]
+          }
+        ],
+        "global_warnings": [
+          "数据期为图片标题所示“2026年8月”，发布日期为2026-09-09，均为图片原文，未作推断。"
+        ],
+        "input_type": "image",
+        "raw_text": null,
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-104",
+      "category": "image_extraction",
+      "severity": "P1",
+      "title": "图片-行情价格截图",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 2722.3,
+      "n_records": 1,
+      "hard_total": 3,
+      "hard_pass": 3,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 3]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "expected": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+          "actual": [
+            "COMMODITY_LITHIUM_CARBONATE_PRICE"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "images/tc104_price.png",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "电池级碳酸锂",
+            "indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+            "standard_indicator": "碳酸锂价格",
+            "category": "商品/价格",
+            "date": "2026-09-14",
+            "value": 73500,
+            "original_value": "73,500元/吨",
+            "unit": "元/吨",
+            "frequency": "daily",
+            "change": {
+              "type": "较前一交易日",
+              "value": -500,
+              "unit": "元/吨"
+            },
+            "market": null,
+            "region": null,
+            "source": "长江有色金属网·现货报价",
+            "evidence": "电池级碳酸锂 73,500元/吨 较前一交易日 -500元/吨 报价日期：2026-09-14",
+            "confidence": 0.95,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+                "standard_name": "碳酸锂价格",
+                "score": 0.88
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "image",
+        "raw_text": null,
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-105",
+      "category": "image_extraction",
+      "severity": "P2",
+      "title": "图片-低质量模糊截图（鲁棒性）",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 5248.2,
+      "n_records": 2,
+      "hard_total": 2,
+      "hard_pass": 2,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[0, 4]",
+          "actual": 2,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "images/tc105_blur.png",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹钢社会库存",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": "2026-09-11",
+            "value": 512.34,
+            "original_value": "512.34 万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "周环比",
+              "value": -12.5,
+              "unit": "万吨"
+            },
+            "market": null,
+            "region": null,
+            "source": "Mysteel 周报",
+            "evidence": "螺纹钢社会库存 512.34 万吨 -12.5 万吨",
+            "confidence": 0.93,
+            "status": "pending_review",
+            "warnings": [
+              "图片所示日期2026-09-11为未来日期，请核实年份是否识别正确",
+              "市场/地区未在原文标注，未做推断"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.6667
+              }
+            ]
+          },
+          {
+            "raw_indicator": "螺纹钢厂库",
+            "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+            "standard_indicator": "螺纹钢厂库",
+            "category": "商品/库存",
+            "date": "2026-09-11",
+            "value": 198.6,
+            "original_value": "198.60 万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "周环比",
+              "value": 3.2,
+              "unit": "万吨"
+            },
+            "market": null,
+            "region": null,
+            "source": "Mysteel 周报",
+            "evidence": "螺纹钢厂库 198.60 万吨 +3.2 万吨",
+            "confidence": 0.93,
+            "status": "pending_review",
+            "warnings": [
+              "图片所示日期2026-09-11为未来日期，请核实年份是否识别正确",
+              "原值为+3.2万吨（上升），已按正数记录",
+              "市场/地区未在原文标注，未做推断"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 0.8
+              }
+            ]
+          }
+        ],
+        "global_warnings": [
+          "表格标题为“Mysteel 钢材周度库存”，日期“2026-09-11”显示为未来日期，建议与原始周报核实年份。",
+          "数据来源标注为“Mysteel 周报”，原文“Mysteel 周报”字样略模糊，已按可辨内容记录。"
+        ],
+        "input_type": "image",
+        "raw_text": null,
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-106",
+      "category": "image_extraction",
+      "severity": "P2",
+      "title": "图片-手机拍照倾斜",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 2171.6,
+      "n_records": 1,
+      "hard_total": 2,
+      "hard_pass": 2,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[0, 4]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "images/tc106_rotated.png",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "电池级碳酸锂",
+            "indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+            "standard_indicator": "碳酸锂价格",
+            "category": "商品/价格",
+            "date": "2026-09-14",
+            "value": 73500,
+            "original_value": "73,500元/吨",
+            "unit": "元/吨",
+            "frequency": "daily",
+            "change": {
+              "type": "较前一交易日",
+              "value": -500,
+              "unit": "元/吨"
+            },
+            "market": "现货",
+            "region": "中国",
+            "source": "长江有色金属网",
+            "evidence": "长江有色金属网·现货报价 / 电池级碳酸锂 73,500元/吨 / 较前一交易日 -500 元/吨 / 报价日期：2026-09-14",
+            "confidence": 0.95,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+                "standard_name": "碳酸锂价格",
+                "score": 0.88
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "image",
+        "raw_text": null,
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-107",
+      "category": "image_extraction",
+      "severity": "P1",
+      "title": "图片-无金融数据的风景图",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 1301.7,
+      "n_records": 0,
+      "hard_total": 2,
+      "hard_pass": 2,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[0, 1]",
+          "actual": 0,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "images/tc107_noise.png",
+      "error": null,
+      "response": {
+        "records": [],
+        "global_warnings": [
+          "图片为纯图形插画（蓝天、太阳、两座绿色山峰），未包含任何文字、表格或金融数据，无可提取记录。",
+          "未检测到指标名称、数值、单位或日期，按规则不进行任何推测。"
+        ],
+        "input_type": "image",
+        "raw_text": null,
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-108",
+      "category": "image_extraction",
+      "severity": "P1",
+      "title": "图片-多指标综合日报表格",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 23572.3,
+      "n_records": 4,
+      "hard_total": 5,
+      "hard_pass": 5,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[3, 10]",
+          "actual": 4,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "COMMODITY_REBAR_MILL_INVENTORY",
+            "COMMODITY_QHD_PORT_COAL_INVENTORY",
+            "COMMODITY_LITHIUM_CARBONATE_PRICE"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_MILL_INVENTORY",
+          "expected": "COMMODITY_REBAR_MILL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "COMMODITY_REBAR_MILL_INVENTORY",
+            "COMMODITY_QHD_PORT_COAL_INVENTORY",
+            "COMMODITY_LITHIUM_CARBONATE_PRICE"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_QHD_PORT_COAL_INVENTORY",
+          "expected": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "COMMODITY_REBAR_MILL_INVENTORY",
+            "COMMODITY_QHD_PORT_COAL_INVENTORY",
+            "COMMODITY_LITHIUM_CARBONATE_PRICE"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "images/tc108_daily_report.png",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹钢社会库存 (09-11)",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": null,
+            "value": 512.34,
+            "original_value": "512.34",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "环比",
+              "value": -12.5,
+              "unit": null
+            },
+            "market": null,
+            "region": null,
+            "source": "【大宗商品 & 宏观 日报】2026-09-14（编制：投研数据组）截图",
+            "evidence": "螺纹钢社会库存 (09-11)　512.34　万吨　-12.5",
+            "confidence": 0.85,
+            "status": "pending_review",
+            "warnings": [
+              "原文数据日期仅为“09-11”，未标注年份，无法确定具体年份，date=null",
+              "环比列“-12.5”未标注单位，无法确认是绝对变化（万吨）还是百分比",
+              "数值与环比均为图片OCR读取，建议与原始报表核对",
+              "缺少完整日期"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 0.6364
+              }
+            ]
+          },
+          {
+            "raw_indicator": "螺纹钢厂库 (09-11)",
+            "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+            "standard_indicator": "螺纹钢厂库",
+            "category": "商品/库存",
+            "date": null,
+            "value": 198.6,
+            "original_value": "198.60",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "环比",
+              "value": 3.2,
+              "unit": null
+            },
+            "market": null,
+            "region": null,
+            "source": "【大宗商品 & 宏观 日报】2026-09-14（编制：投研数据组）截图",
+            "evidence": "螺纹钢厂库 (09-11)　198.60　万吨　+3.2",
+            "confidence": 0.85,
+            "status": "pending_review",
+            "warnings": [
+              "原文数据日期仅为“09-11”，未标注年份，无法确定具体年份，date=null",
+              "环比列“+3.2”未标注单位，无法确认是绝对变化（万吨）还是百分比",
+              "数值与环比均为图片OCR读取，建议与原始报表核对",
+              "缺少完整日期"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.88
+              }
+            ]
+          },
+          {
+            "raw_indicator": "秦皇岛港煤炭库存",
+            "indicator_id": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+            "standard_indicator": "秦皇岛港煤炭库存",
+            "category": "商品/库存",
+            "date": "2026-09-14",
+            "value": 612.0,
+            "original_value": "612.00",
+            "unit": "万吨",
+            "frequency": "daily",
+            "change": {
+              "type": "环比",
+              "value": -8.0,
+              "unit": null
+            },
+            "market": null,
+            "region": null,
+            "source": "【大宗商品 & 宏观 日报】2026-09-14（编制：投研数据组）截图",
+            "evidence": "秦皇岛港煤炭库存　612.00　万吨　-8.0",
+            "confidence": 0.8,
+            "status": "pending_review",
+            "warnings": [
+              "该行未单独标注数据日期，date采用报告日期2026-09-14（日报发布日期），实际数据截止日可能不同",
+              "环比列“-8.0”未标注单位，无法确认是绝对变化（万吨）还是百分比",
+              "数值与环比均为图片OCR读取，建议与原始报表核对"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_QHD_PORT_COAL_INVENTORY",
+                "standard_name": "秦皇岛港煤炭库存",
+                "score": 1.0
+              }
+            ]
+          },
+          {
+            "raw_indicator": "电池级碳酸锂价格",
+            "indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+            "standard_indicator": "碳酸锂价格",
+            "category": "商品/价格",
+            "date": "2026-09-14",
+            "value": 73500.0,
+            "original_value": "73500",
+            "unit": "元/吨",
+            "frequency": "daily",
+            "change": {
+              "type": "环比",
+              "value": -500.0,
+              "unit": null
+            },
+            "market": null,
+            "region": null,
+            "source": "【大宗商品 & 宏观 日报】2026-09-14（编制：投研数据组）截图",
+            "evidence": "电池级碳酸锂价格　73500　元/吨　-500",
+            "confidence": 0.8,
+            "status": "pending_review",
+            "warnings": [
+              "该行未单独标注数据日期，date采用报告日期2026-09-14（日报发布日期），实际数据截止日可能不同",
+              "环比列“-500”未标注单位，无法确认是绝对变化（元/吨）还是百分比",
+              "原文未说明是电池级碳酸锂的现货价、均价还是某报价源口径",
+              "数值与环比均为图片OCR读取，建议与原始报表核对"
+            ],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE",
+                "standard_name": "碳酸锂价格",
+                "score": 1.0
+              }
+            ]
+          }
+        ],
+        "global_warnings": [
+          "图片页眉报告日期为2026-09-14，但螺纹钢两行仅标注“(09-11)”，无年份，按规则不推断年份，故其date=null并进入待复核",
+          "表中“环比”列表头无单位说明，四条记录的环比仅保留类型（环比）与数值，单位统一置为null，禁止臆造单位",
+          "所有数值均来自图片OCR识别，存在识别误差可能，建议与原始日报核对后再入库",
+          "未提取到宏观CPI/PPI等其他指标数据"
+        ],
+        "input_type": "image",
+        "raw_text": null,
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-201",
+      "category": "api_contract",
+      "severity": "P0",
+      "title": "健康检查",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 1.0,
+      "n_records": 0,
+      "hard_total": 3,
+      "hard_pass": 3,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "api_contract",
+          "field": "body.status",
+          "expected": "ok",
+          "actual": "ok",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "api_contract",
+          "field": "body.version",
+          "expected": "1.1.0",
+          "actual": "1.1.0",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "/health",
+      "error": null,
+      "response": {
+        "status": "ok",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "id": "TC-202",
+      "category": "api_contract",
+      "severity": "P0",
+      "title": "文本接口缺 text 必填字段",
+      "status": "PASS",
+      "http_status": 422,
+      "latency_ms": 0.8,
+      "n_records": 0,
+      "hard_total": 1,
+      "hard_pass": 1,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 422,
+          "actual": 422,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "/api/v1/extract/text",
+      "error": null,
+      "response": {
+        "detail": [
+          {
+            "type": "missing",
+            "loc": [
+              "body",
+              "text"
+            ],
+            "msg": "Field required",
+            "input": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "TC-203",
+      "category": "api_contract",
+      "severity": "P0",
+      "title": "图片接口拒绝非图片类型",
+      "status": "PASS",
+      "http_status": 400,
+      "latency_ms": 1.2,
+      "n_records": 0,
+      "hard_total": 1,
+      "hard_pass": 1,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 400,
+          "actual": 400,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "images/tc101_inventory_table.png",
+      "error": null,
+      "response": {
+        "detail": "仅支持图片文件"
+      }
+    },
+    {
+      "id": "TC-204",
+      "category": "api_contract",
+      "severity": "P0",
+      "title": "图片接口拒绝超大图片（>MAX_IMAGE_MB）",
+      "status": "PASS",
+      "http_status": 400,
+      "latency_ms": 77.1,
+      "n_records": 0,
+      "hard_total": 1,
+      "hard_pass": 1,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 400,
+          "actual": 400,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "/api/v1/extract/image",
+      "error": null,
+      "response": {
+        "detail": "图片超过大小限制"
+      }
+    },
+    {
+      "id": "TC-205",
+      "category": "api_contract",
+      "severity": "P0",
+      "title": "图片接口缺 file 字段",
+      "status": "PASS",
+      "http_status": 422,
+      "latency_ms": 0.8,
+      "n_records": 0,
+      "hard_total": 1,
+      "hard_pass": 1,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 422,
+          "actual": 422,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "/api/v1/extract/image",
+      "error": null,
+      "response": {
+        "detail": [
+          {
+            "type": "missing",
+            "loc": [
+              "body",
+              "file"
+            ],
+            "msg": "Field required",
+            "input": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "TC-206",
+      "category": "api_contract",
+      "severity": "P2",
+      "title": "不存在的路由返回 404",
+      "status": "PASS",
+      "http_status": 404,
+      "latency_ms": 0.8,
+      "n_records": 0,
+      "hard_total": 1,
+      "hard_pass": 1,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 404,
+          "actual": 404,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "/api/v1/not-exist",
+      "error": null,
+      "response": {
+        "detail": "Not Found"
+      }
+    },
+    {
+      "id": "TC-207",
+      "category": "api_contract",
+      "severity": "P1",
+      "title": "空字符串文本可正常受理",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 687.0,
+      "n_records": 0,
+      "hard_total": 3,
+      "hard_pass": 3,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[0, 99]",
+          "actual": 0,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "无金融数据时不得臆造记录",
+          "expected": 0,
+          "actual": 0,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": " ",
+      "error": null,
+      "response": {
+        "records": [],
+        "global_warnings": [
+          "输入内容为空，未提供任何截图、聊天、照片或OCR文本，无法提取金融数据。",
+          "请提供包含金融数据的文本或图片内容后重试。"
+        ],
+        "input_type": "text",
+        "raw_text": " ",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-208",
+      "category": "api_contract",
+      "severity": "P1",
+      "title": "超长文本输入不截断不报错",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 2530.0,
+      "n_records": 1,
+      "hard_total": 2,
+      "hard_pass": 2,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 99]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "/api/v1/extract/text",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹钢社会库存",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": "2026-09-11",
+            "value": 512.34,
+            "original_value": "512.34万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": {
+              "type": "周环比",
+              "value": -12.5,
+              "unit": "万吨"
+            },
+            "market": "中国",
+            "region": null,
+            "source": null,
+            "evidence": "2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。",
+            "confidence": 0.96,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.6667
+              }
+            ]
+          }
+        ],
+        "global_warnings": [
+          "输入中同一句话重复出现120次，已按相同指标/日期/数值去重，仅输出1条记录。",
+          "原文未提供数据来源机构，source=null。",
+          "地区标注为“中国”系依据指标口径（螺纹钢社会库存为国内口径）推导，原文未明示。"
+        ],
+        "input_type": "text",
+        "raw_text": "2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。\n2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    },
+    {
+      "id": "TC-209",
+      "category": "api_contract",
+      "severity": "P2",
+      "title": "Swagger 文档可达",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 0.8,
+      "n_records": 0,
+      "hard_total": 1,
+      "hard_pass": 1,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "/docs",
+      "error": null,
+      "response": {
+        "_raw": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n    <link type=\"text/css\" rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css\">\n    <link rel=\"shortcut icon\" href=\"https://fastapi.tiangolo.com/img/favicon.png\">\n    <title>投研非结构化数据智能采集与标准化 Agent - Swagger UI</title>\n    </head>\n    <body>\n    <div id=\"swagger-ui\">\n    </div>\n    <script src=\"https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-bundle.js\"></script>\n    <!-- `SwaggerUIBundle` is now available on the"
+      }
+    },
+    {
+      "id": "TC-210",
+      "category": "api_contract",
+      "severity": "P1",
+      "title": "带 context 的文本抽取",
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 15475.5,
+      "n_records": 1,
+      "hard_total": 7,
+      "hard_pass": 7,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "http_status",
+          "expected": 200,
+          "actual": 200,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_count",
+          "field": "records 数量",
+          "expected": "[1, 1]",
+          "actual": 1,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "包含指标 COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "record_match",
+          "field": "记录[1].存在",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "记录[1].indicator_id",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "value",
+          "field": "记录[1].value",
+          "expected": 512.34,
+          "actual": 512.34,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "记录[1].date",
+          "expected": [
+            null,
+            "2026-09-11"
+          ],
+          "actual": "2026-09-11",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "9月11日，螺纹钢社会库存512.34万吨。",
+      "error": null,
+      "response": {
+        "records": [
+          {
+            "raw_indicator": "螺纹钢社会库存",
+            "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            "standard_indicator": "螺纹钢社会库存",
+            "category": "商品/库存",
+            "date": "2026-09-11",
+            "value": 512.34,
+            "original_value": "512.34万吨",
+            "unit": "万吨",
+            "frequency": "weekly",
+            "change": null,
+            "market": null,
+            "region": null,
+            "source": "Mysteel周报",
+            "evidence": "9月11日，螺纹钢社会库存512.34万吨。",
+            "confidence": 0.99,
+            "status": "ready",
+            "warnings": [],
+            "candidates": [
+              {
+                "indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+                "standard_name": "螺纹钢社会库存",
+                "score": 1.0
+              },
+              {
+                "indicator_id": "COMMODITY_REBAR_MILL_INVENTORY",
+                "standard_name": "螺纹钢厂库",
+                "score": 0.6667
+              }
+            ]
+          }
+        ],
+        "global_warnings": [],
+        "input_type": "text",
+        "raw_text": "9月11日，螺纹钢社会库存512.34万吨。",
+        "model": "deepseek-flash",
+        "prompt_version": "v1.1"
+      }
+    }
+  ]
+}

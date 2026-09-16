@@ -1,0 +1,22 @@
+[
+  {
+    "interface": "/api/v1/extract/text (sync def → 线程池)",
+    "n": 3,
+    "single_avg_s": 3.8,
+    "serial_total_s": 11.39,
+    "parallel_total_s": 3.08,
+    "speedup": 3.7,
+    "verdict": "并发正常",
+    "llm_live": true
+  },
+  {
+    "interface": "/api/v1/extract/image (async def → 事件循环)",
+    "n": 3,
+    "single_avg_s": 3.43,
+    "serial_total_s": 10.28,
+    "parallel_total_s": 8.63,
+    "speedup": 1.19,
+    "verdict": "串行阻塞",
+    "llm_live": true
+  }
+]

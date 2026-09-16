@@ -1,0 +1,632 @@
+{
+  "meta": {
+    "suite": "financial_data_agent_v1_1",
+    "agent_version": "1.1.0",
+    "total": 50,
+    "description": "投研非结构化数据智能采集与标准化 Agent V1.1 端到端测试用例集",
+    "categories": {
+      "text_extraction": "文本抽取（LLM）",
+      "image_extraction": "图片抽取（Vision LLM）",
+      "api_contract": "接口契约与入参校验（不依赖 LLM）"
+    },
+    "severity_legend": {
+      "P0": "核心链路，失败即不可用",
+      "P1": "重要能力，失败需修复",
+      "P2": "鲁棒性/体验，失败可接受但需记录"
+    }
+  },
+  "cases": [
+    {
+      "id": "TC-001",
+      "category": "text_extraction",
+      "title": "螺纹钢社会库存-完整单条",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "截至2026年9月11日，螺纹钢社会库存为512.34万吨，较上周减少12.5万吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_REBAR_SOCIAL_INVENTORY"],
+        "records": [
+          {"indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY", "standard_indicator": "螺纹钢社会库存", "category": "商品/库存",
+           "date": "2026-09-11", "value": 512.34, "value_tol": 0.01, "unit": "万吨",
+           "change_type": "周环比", "change_value": -12.5, "change_tol": 0.01,
+           "status": "ready", "status_soft": true, "confidence_min": 0.95}
+        ]
+      }
+    },
+    {
+      "id": "TC-002",
+      "category": "text_extraction",
+      "title": "螺纹钢厂库-完整单条",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026年9月11日，螺纹钢厂库报198.6万吨，周环比增加3.2万吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_REBAR_MILL_INVENTORY"],
+        "records": [
+          {"indicator_id": "COMMODITY_REBAR_MILL_INVENTORY", "standard_indicator": "螺纹钢厂库",
+           "date": "2026-09-11", "value": 198.6, "value_tol": 0.01, "unit": "万吨",
+           "change_type": "周环比", "change_value": 3.2, "change_tol": 0.01,
+           "status": "ready", "status_soft": true, "confidence_min": 0.95}
+        ]
+      }
+    },
+    {
+      "id": "TC-003",
+      "category": "text_extraction",
+      "title": "秦皇岛港煤炭库存-日频",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026-09-14，秦皇岛港煤炭库存612万吨，日环比下降8万吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_QHD_PORT_COAL_INVENTORY"],
+        "records": [
+          {"indicator_id": "COMMODITY_QHD_PORT_COAL_INVENTORY", "standard_indicator": "秦皇岛港煤炭库存",
+           "date": "2026-09-14", "value": 612, "value_tol": 0.01, "unit": "万吨",
+           "change_type": "日环比", "change_value": -8, "change_tol": 0.01,
+           "status": "ready", "status_soft": true, "confidence_min": 0.95}
+        ]
+      }
+    },
+    {
+      "id": "TC-004",
+      "category": "text_extraction",
+      "title": "碳酸锂价格-日频",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026年9月14日，电池级碳酸锂现货价格为73500元/吨，较前一交易日下跌500元/吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_LITHIUM_CARBONATE_PRICE"],
+        "records": [
+          {"indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE", "standard_indicator": "碳酸锂价格",
+           "date": "2026-09-14", "value": 73500, "value_tol": 0.5, "unit": "元/吨",
+           "change_type": "日环比", "change_type_options": ["日环比", "环比"], "change_value": -500, "change_tol": 0.5,
+           "status": "ready", "status_soft": true, "confidence_min": 0.95}
+        ]
+      }
+    },
+    {
+      "id": "TC-005",
+      "category": "text_extraction",
+      "title": "CPI-同比",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "国家统计局发布：2026年8月，全国居民消费价格指数（CPI）同比上涨0.6%。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 2,
+        "expected_indicators": ["MACRO_CPI"],
+        "records": [
+          {"indicator_id": "MACRO_CPI", "standard_indicator": "居民消费价格指数", "category": "宏观/价格",
+           "date": "2026-08", "date_options": ["2026-08", "2026-08-01"], "value": 0.6, "value_tol": 0.001, "unit": "%",
+           "change_type": "同比", "change_value": 0.6, "change_tol": 0.001,
+           "status": "ready", "status_soft": true}
+        ]
+      }
+    },
+    {
+      "id": "TC-006",
+      "category": "text_extraction",
+      "title": "PPI-同比为负",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026年8月，全国工业生产者出厂价格指数（PPI）同比下降1.8%。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 2,
+        "expected_indicators": ["MACRO_PPI"],
+        "records": [
+          {"indicator_id": "MACRO_PPI", "standard_indicator": "工业生产者出厂价格指数", "category": "宏观/价格",
+           "date": "2026-08", "date_options": ["2026-08", "2026-08-01"], "value": -1.8, "value_tol": 0.01, "unit": "%",
+           "change_type": "同比", "change_value": -1.8, "change_tol": 0.01,
+           "status": "ready", "status_soft": true}
+        ]
+      }
+    },
+    {
+      "id": "TC-007",
+      "category": "text_extraction",
+      "title": "别名归一-RB库存（无年份）",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "截至9月11日当周，RB库存降至512.34万吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_REBAR_SOCIAL_INVENTORY"],
+        "records": [
+          {"indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY", "standard_indicator": "螺纹钢社会库存",
+           "date": null, "value": 512.34, "value_tol": 0.01, "unit": "万吨",
+           "status": "pending_review", "expect_warnings_contains": ["缺少完整日期"]}
+        ]
+      }
+    },
+    {
+      "id": "TC-008",
+      "category": "text_extraction",
+      "title": "别名归一-螺纹社库",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "螺纹社库最新报512.34万吨，较上周减少12.5万吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_REBAR_SOCIAL_INVENTORY"],
+        "records": [
+          {"indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY", "value": 512.34, "value_tol": 0.01, "unit": "万吨",
+           "change_value": -12.5, "change_tol": 0.01}
+        ]
+      }
+    },
+    {
+      "id": "TC-009",
+      "category": "text_extraction",
+      "title": "别名归一-秦港库存",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "秦港库存612万吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_QHD_PORT_COAL_INVENTORY"],
+        "records": [
+          {"indicator_id": "COMMODITY_QHD_PORT_COAL_INVENTORY", "standard_indicator": "秦皇岛港煤炭库存",
+           "value": 612, "value_tol": 0.01, "unit": "万吨", "date": null}
+        ]
+      }
+    },
+    {
+      "id": "TC-010",
+      "category": "text_extraction",
+      "title": "单位归一-万元/吨→元/吨",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026年9月14日，锂价报7.35万元/吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_LITHIUM_CARBONATE_PRICE"],
+        "records": [
+          {"indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE", "value": 73500, "value_tol": 1,
+           "unit": "元/吨", "unit_options": ["元/吨", "万元/吨"], "date": "2026-09-14",
+           "original_value_soft_contains": "万元"}
+        ]
+      }
+    },
+    {
+      "id": "TC-011",
+      "category": "text_extraction",
+      "title": "防幻觉-完全无日期",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "螺纹钢社会库存512.34万吨，较上周减少12.5万吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_REBAR_SOCIAL_INVENTORY"],
+        "records": [
+          {"indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY", "date": null, "value": 512.34, "value_tol": 0.01, "unit": "万吨",
+           "status": "pending_review", "expect_warnings_contains": ["缺少完整日期"]}
+        ]
+      }
+    },
+    {
+      "id": "TC-012",
+      "category": "text_extraction",
+      "title": "防幻觉-有月日无年份",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "9月11日，螺纹钢厂库198.6万吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_REBAR_MILL_INVENTORY"],
+        "records": [
+          {"indicator_id": "COMMODITY_REBAR_MILL_INVENTORY", "date": null, "value": 198.6, "value_tol": 0.01, "unit": "万吨",
+           "status": "pending_review"}
+        ]
+      }
+    },
+    {
+      "id": "TC-013",
+      "category": "text_extraction",
+      "title": "防幻觉-相对时间（昨日）",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "昨日秦皇岛港煤炭库存612万吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_QHD_PORT_COAL_INVENTORY"],
+        "records": [
+          {"indicator_id": "COMMODITY_QHD_PORT_COAL_INVENTORY", "date": null, "value": 612, "value_tol": 0.01, "unit": "万吨",
+           "status": "pending_review"}
+        ]
+      }
+    },
+    {
+      "id": "TC-014",
+      "category": "text_extraction",
+      "title": "防幻觉-模糊时间表述",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "最新数据显示，碳酸锂价格73500元/吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_LITHIUM_CARBONATE_PRICE"],
+        "records": [
+          {"indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE", "date": null, "value": 73500, "value_tol": 0.5, "unit": "元/吨",
+           "status": "pending_review"}
+        ]
+      }
+    },
+    {
+      "id": "TC-015",
+      "category": "text_extraction",
+      "title": "防幻觉-只有月份无年份",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "8月CPI同比上涨0.6%。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["MACRO_CPI"],
+        "records": [
+          {"indicator_id": "MACRO_CPI", "date": null, "value": 0.6, "value_tol": 0.001, "unit": "%",
+           "status": "pending_review"}
+        ]
+      }
+    },
+    {
+      "id": "TC-016",
+      "category": "text_extraction",
+      "title": "变化量-同比下降保留负号",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026年8月，CPI同比下降0.3%。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["MACRO_CPI"],
+        "records": [
+          {"indicator_id": "MACRO_CPI", "change_type": "同比", "change_value": -0.3, "change_tol": 0.001,
+           "value": -0.3, "value_tol": 0.001}
+        ]
+      }
+    },
+    {
+      "id": "TC-017",
+      "category": "text_extraction",
+      "title": "变化量-环比上涨",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026年8月，CPI环比上涨0.2%。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["MACRO_CPI"],
+        "records": [
+          {"indicator_id": "MACRO_CPI", "change_type": "环比", "change_value": 0.2, "change_tol": 0.001}
+        ]
+      }
+    },
+    {
+      "id": "TC-018",
+      "category": "text_extraction",
+      "title": "变化量-周环比减少",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "截至2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_REBAR_SOCIAL_INVENTORY"],
+        "records": [
+          {"indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY", "change_type": "周环比", "change_value": -12.5, "change_tol": 0.01}
+        ]
+      }
+    },
+    {
+      "id": "TC-019",
+      "category": "text_extraction",
+      "title": "变化量-较前一日下跌",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026年9月14日碳酸锂价格73500元/吨，较前一日下跌500元/吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_LITHIUM_CARBONATE_PRICE"],
+        "records": [
+          {"indicator_id": "COMMODITY_LITHIUM_CARBONATE_PRICE", "change_value": -500, "change_tol": 0.5}
+        ]
+      }
+    },
+    {
+      "id": "TC-020",
+      "category": "text_extraction",
+      "title": "单位-缺失但知识库可补默认单位",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026年9月11日，螺纹钢社会库存512.34。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_REBAR_SOCIAL_INVENTORY"],
+        "records": [
+          {"indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY", "value": 512.34, "value_tol": 0.01,
+           "unit": "万吨", "unit_options": ["万吨", null], "if_unit_null_expect_warning": "缺少单位"}
+        ]
+      }
+    },
+    {
+      "id": "TC-021",
+      "category": "text_extraction",
+      "title": "单位-与知识库默认单位冲突（千吨）",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026年9月11日，螺纹钢社会库存512.34千吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_REBAR_SOCIAL_INVENTORY"],
+        "records": [
+          {"indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY", "unit": "千吨", "unit_options": ["千吨", "万吨"], "unit_must_not_be_null": true}
+        ]
+      }
+    },
+    {
+      "id": "TC-022",
+      "category": "text_extraction",
+      "title": "单位-非知识库指标且无单位",
+      "severity": "P2",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026年9月11日，电解铝社会库存52.3。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "records": [
+          {"indicator_id": null, "unit": null, "status": "pending_review"}
+        ]
+      }
+    },
+    {
+      "id": "TC-023",
+      "category": "text_extraction",
+      "title": "单位-文本中显式标注单位",
+      "severity": "P2",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026年9月11日，螺纹钢社会库存512.34，单位：万吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_REBAR_SOCIAL_INVENTORY"],
+        "records": [
+          {"indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY", "value": 512.34, "value_tol": 0.01, "unit": "万吨"}
+        ]
+      }
+    },
+    {
+      "id": "TC-024",
+      "category": "text_extraction",
+      "title": "多记录-一条新闻含三个指标",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨；螺纹钢厂库198.6万吨，周环比增加3.2万吨。2026年9月14日，秦皇岛港煤炭库存612万吨，日环比下降8万吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 3, "max_records": 6,
+        "expected_indicators": ["COMMODITY_REBAR_SOCIAL_INVENTORY", "COMMODITY_REBAR_MILL_INVENTORY", "COMMODITY_QHD_PORT_COAL_INVENTORY"]
+      }
+    },
+    {
+      "id": "TC-025",
+      "category": "text_extraction",
+      "title": "多记录-宏观双指标同月",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026年8月，CPI同比上涨0.6%，PPI同比下降1.8%。"},
+      "expect": {
+        "http_status": 200, "min_records": 2, "max_records": 4,
+        "expected_indicators": ["MACRO_CPI", "MACRO_PPI"]
+      }
+    },
+    {
+      "id": "TC-026",
+      "category": "text_extraction",
+      "title": "多记录-同一指标多期序列",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "螺纹钢社会库存：2026年9月4日为524.84万吨，2026年9月11日为512.34万吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 2, "max_records": 2,
+        "expected_indicators": ["COMMODITY_REBAR_SOCIAL_INVENTORY"],
+        "distinct_dates": ["2026-09-04", "2026-09-11"]
+      }
+    },
+    {
+      "id": "TC-027",
+      "category": "text_extraction",
+      "title": "超纲指标-期货品种不在知识库",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026年9月14日，沪铜主力合约收于78230元/吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 2,
+        "records": [{"indicator_id": null}]
+      }
+    },
+    {
+      "id": "TC-028",
+      "category": "text_extraction",
+      "title": "超纲指标-相近口径不可误映射",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026年9月11日，螺纹钢表观消费量320.5万吨。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 2,
+        "records": [{"indicator_id": null}],
+        "forbidden_indicators": ["COMMODITY_REBAR_SOCIAL_INVENTORY", "COMMODITY_REBAR_MILL_INVENTORY"]
+      }
+    },
+    {
+      "id": "TC-029",
+      "category": "text_extraction",
+      "title": "超纲指标-股票指数",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "2026年9月14日，上证指数收报3421.55点。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 2,
+        "records": [{"indicator_id": null}]
+      }
+    },
+    {
+      "id": "TC-030",
+      "category": "text_extraction",
+      "title": "噪声-纯寒暄无金融数据",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "早上好，今天天气不错，适合出去走走。"},
+      "expect": {"http_status": 200, "min_records": 0, "max_records": 0}
+    },
+    {
+      "id": "TC-031",
+      "category": "text_extraction",
+      "title": "噪声-无关公告无数据",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "公司发布公告称，董事长因个人原因辞去职务，即日生效。"},
+      "expect": {"http_status": 200, "min_records": 0, "max_records": 0}
+    },
+    {
+      "id": "TC-032",
+      "category": "text_extraction",
+      "title": "噪声-空文本",
+      "severity": "P2",
+      "request": {"endpoint": "/api/v1/extract/text", "text": ""},
+      "expect": {"http_status": 200, "min_records": 0, "max_records": 0}
+    },
+
+    {
+      "id": "TC-101",
+      "category": "image_extraction",
+      "title": "图片-商品库存表格截图",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/image", "image": "images/tc101_inventory_table.png", "content_type": "image/png"},
+      "expect": {
+        "http_status": 200, "min_records": 2, "max_records": 6,
+        "expected_indicators": ["COMMODITY_REBAR_SOCIAL_INVENTORY", "COMMODITY_REBAR_MILL_INVENTORY"]
+      }
+    },
+    {
+      "id": "TC-102",
+      "category": "image_extraction",
+      "title": "图片-微信群聊截图",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/image", "image": "images/tc102_chat.png", "content_type": "image/png"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 4,
+        "expected_indicators": ["COMMODITY_REBAR_SOCIAL_INVENTORY"]
+      }
+    },
+    {
+      "id": "TC-103",
+      "category": "image_extraction",
+      "title": "图片-宏观数据发布截图",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/image", "image": "images/tc103_macro.png", "content_type": "image/png"},
+      "expect": {
+        "http_status": 200, "min_records": 2, "max_records": 6,
+        "expected_indicators": ["MACRO_CPI", "MACRO_PPI"]
+      }
+    },
+    {
+      "id": "TC-104",
+      "category": "image_extraction",
+      "title": "图片-行情价格截图",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/image", "image": "images/tc104_price.png", "content_type": "image/png"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 3,
+        "expected_indicators": ["COMMODITY_LITHIUM_CARBONATE_PRICE"]
+      }
+    },
+    {
+      "id": "TC-105",
+      "category": "image_extraction",
+      "title": "图片-低质量模糊截图（鲁棒性）",
+      "severity": "P2",
+      "request": {"endpoint": "/api/v1/extract/image", "image": "images/tc105_blur.png", "content_type": "image/png"},
+      "expect": {"http_status": 200, "min_records": 0, "max_records": 4}
+    },
+    {
+      "id": "TC-106",
+      "category": "image_extraction",
+      "title": "图片-手机拍照倾斜",
+      "severity": "P2",
+      "request": {"endpoint": "/api/v1/extract/image", "image": "images/tc106_rotated.png", "content_type": "image/png"},
+      "expect": {"http_status": 200, "min_records": 0, "max_records": 4}
+    },
+    {
+      "id": "TC-107",
+      "category": "image_extraction",
+      "title": "图片-无金融数据的风景图",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/image", "image": "images/tc107_noise.png", "content_type": "image/png"},
+      "expect": {"http_status": 200, "min_records": 0, "max_records": 1}
+    },
+    {
+      "id": "TC-108",
+      "category": "image_extraction",
+      "title": "图片-多指标综合日报表格",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/image", "image": "images/tc108_daily_report.png", "content_type": "image/png"},
+      "expect": {
+        "http_status": 200, "min_records": 3, "max_records": 10,
+        "expected_indicators": ["COMMODITY_REBAR_SOCIAL_INVENTORY", "COMMODITY_REBAR_MILL_INVENTORY", "COMMODITY_QHD_PORT_COAL_INVENTORY"]
+      }
+    },
+
+    {
+      "id": "TC-201",
+      "category": "api_contract",
+      "title": "健康检查",
+      "severity": "P0",
+      "request": {"endpoint": "/health", "method": "GET"},
+      "expect": {"http_status": 200, "json_fields": {"status": "ok", "version": "1.1.0"}}
+    },
+    {
+      "id": "TC-202",
+      "category": "api_contract",
+      "title": "文本接口缺 text 必填字段",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/text", "omit_text": true},
+      "expect": {"http_status": 422}
+    },
+    {
+      "id": "TC-203",
+      "category": "api_contract",
+      "title": "图片接口拒绝非图片类型",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/image", "image": "images/tc101_inventory_table.png", "content_type": "text/plain"},
+      "expect": {"http_status": 400}
+    },
+    {
+      "id": "TC-204",
+      "category": "api_contract",
+      "title": "图片接口拒绝超大图片（>MAX_IMAGE_MB）",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/image", "gen_oversized": true, "content_type": "image/png"},
+      "expect": {"http_status": 400}
+    },
+    {
+      "id": "TC-205",
+      "category": "api_contract",
+      "title": "图片接口缺 file 字段",
+      "severity": "P0",
+      "request": {"endpoint": "/api/v1/extract/image", "omit_file": true},
+      "expect": {"http_status": 422}
+    },
+    {
+      "id": "TC-206",
+      "category": "api_contract",
+      "title": "不存在的路由返回 404",
+      "severity": "P2",
+      "request": {"endpoint": "/api/v1/not-exist", "method": "GET"},
+      "expect": {"http_status": 404}
+    },
+    {
+      "id": "TC-207",
+      "category": "api_contract",
+      "title": "空字符串文本可正常受理",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": " "},
+      "expect": {"http_status": 200}
+    },
+    {
+      "id": "TC-208",
+      "category": "api_contract",
+      "title": "超长文本输入不截断不报错",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text_gen": {"repeat": 120, "unit": "2026年9月11日，螺纹钢社会库存512.34万吨，周环比减少12.5万吨。"}},
+      "expect": {"http_status": 200, "min_records": 1}
+    },
+    {
+      "id": "TC-209",
+      "category": "api_contract",
+      "title": "Swagger 文档可达",
+      "severity": "P2",
+      "request": {"endpoint": "/docs", "method": "GET"},
+      "expect": {"http_status": 200}
+    },
+    {
+      "id": "TC-210",
+      "category": "api_contract",
+      "title": "带 context 的文本抽取",
+      "severity": "P1",
+      "request": {"endpoint": "/api/v1/extract/text", "text": "9月11日，螺纹钢社会库存512.34万吨。", "context": "数据来源：Mysteel周报，统计周期2026年9月第2周。"},
+      "expect": {
+        "http_status": 200, "min_records": 1, "max_records": 1,
+        "expected_indicators": ["COMMODITY_REBAR_SOCIAL_INVENTORY"],
+        "records": [
+          {"indicator_id": "COMMODITY_REBAR_SOCIAL_INVENTORY", "value": 512.34, "value_tol": 0.01,
+           "date": null, "date_options": [null, "2026-09-11"]}
+        ]
+      }
+    }
+  ]
+}

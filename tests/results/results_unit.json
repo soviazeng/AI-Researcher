@@ -1,0 +1,912 @@
+{
+  "summary": {
+    "label": "unit",
+    "llm_enabled": false,
+    "model": "(none)",
+    "total": 16,
+    "passed": 16,
+    "failed": 0,
+    "errors": 0,
+    "generated_at": "2026-09-15 11:34:53"
+  },
+  "results": [
+    {
+      "id": "U-01",
+      "category": "unit",
+      "severity": "P0",
+      "title": "知识库-标准名精确命中得 1.0",
+      "status": "PASS",
+      "http_status": null,
+      "latency_ms": 0.0,
+      "n_records": null,
+      "hard_total": 6,
+      "hard_pass": 6,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "indicator_mapping",
+          "field": "螺纹钢社会库存 命中",
+          "expected": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            1.0
+          ],
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            1.0
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "螺纹钢厂库 命中",
+          "expected": [
+            "COMMODITY_REBAR_MILL_INVENTORY",
+            1.0
+          ],
+          "actual": [
+            "COMMODITY_REBAR_MILL_INVENTORY",
+            1.0
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "秦皇岛港煤炭库存 命中",
+          "expected": [
+            "COMMODITY_QHD_PORT_COAL_INVENTORY",
+            1.0
+          ],
+          "actual": [
+            "COMMODITY_QHD_PORT_COAL_INVENTORY",
+            1.0
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "碳酸锂价格 命中",
+          "expected": [
+            "COMMODITY_LITHIUM_CARBONATE_PRICE",
+            1.0
+          ],
+          "actual": [
+            "COMMODITY_LITHIUM_CARBONATE_PRICE",
+            1.0
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "居民消费价格指数 命中",
+          "expected": [
+            "MACRO_CPI",
+            1.0
+          ],
+          "actual": [
+            "MACRO_CPI",
+            1.0
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "工业生产者出厂价格指数 命中",
+          "expected": [
+            "MACRO_PPI",
+            1.0
+          ],
+          "actual": [
+            "MACRO_PPI",
+            1.0
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "(纯函数调用，无网络)",
+      "error": null,
+      "response": null
+    },
+    {
+      "id": "U-02",
+      "category": "unit",
+      "severity": "P0",
+      "title": "知识库-别名精确命中得 1.0",
+      "status": "PASS",
+      "http_status": null,
+      "latency_ms": 0.0,
+      "n_records": null,
+      "hard_total": 4,
+      "hard_pass": 4,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "indicator_mapping",
+          "field": "别名 RB库存",
+          "expected": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            1.0
+          ],
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            1.0
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "别名 螺纹社库",
+          "expected": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            1.0
+          ],
+          "actual": [
+            "COMMODITY_REBAR_SOCIAL_INVENTORY",
+            1.0
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "别名 秦港库存",
+          "expected": [
+            "COMMODITY_QHD_PORT_COAL_INVENTORY",
+            1.0
+          ],
+          "actual": [
+            "COMMODITY_QHD_PORT_COAL_INVENTORY",
+            1.0
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "别名 锂价",
+          "expected": [
+            "COMMODITY_LITHIUM_CARBONATE_PRICE",
+            1.0
+          ],
+          "actual": [
+            "COMMODITY_LITHIUM_CARBONATE_PRICE",
+            1.0
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "(纯函数调用，无网络)",
+      "error": null,
+      "response": null
+    },
+    {
+      "id": "U-03",
+      "category": "unit",
+      "severity": "P1",
+      "title": "知识库-近似命中得分夹在 0.95 之下，无法触发自动回填",
+      "status": "PASS",
+      "http_status": null,
+      "latency_ms": 0.0,
+      "n_records": null,
+      "hard_total": 6,
+      "hard_pass": 6,
+      "soft_total": 2,
+      "soft_pass": 1,
+      "assertions": [
+        {
+          "dim": "indicator_mapping",
+          "field": "近似命中 螺纹钢库存数据 得分<0.95（不触发自动回填）",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": "实际 score=0.88，自动回填阈值 0.95"
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "近似命中 秦港库存量 得分<0.95（不触发自动回填）",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": "实际 score=0.8889，自动回填阈值 0.95"
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "近似命中 螺纹钢社会库存数据 得分<0.95（不触发自动回填）",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": "实际 score=0.875，自动回填阈值 0.95"
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "近似命中 秦皇岛港煤炭库存情况 得分<0.95（不触发自动回填）",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": "实际 score=0.8889，自动回填阈值 0.95"
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "别名子串 螺纹钢库存数据 享 0.88 保底",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": "实际 score=0.88"
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "别名子串 秦港库存量 享 0.88 保底",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": "实际 score=0.8889"
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "仅标准名子串 螺纹钢社会库存数据 未享 0.88 保底（实现不一致）",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": false,
+          "note": "实际 score=0.875：indicator_master.py:25 只对 aliases 做子串判断，standard_name 是子串时不给保底，同类输入得分口径不统一（问题 F-08）"
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "仅标准名子串 秦皇岛港煤炭库存情况 未享 0.88 保底（实现不一致）",
+          "expected": true,
+          "actual": false,
+          "ok": false,
+          "hard": false,
+          "note": "实际 score=0.8889：indicator_master.py:25 只对 aliases 做子串判断，standard_name 是子串时不给保底，同类输入得分口径不统一（问题 F-08）"
+        }
+      ],
+      "input": "(纯函数调用，无网络)",
+      "error": null,
+      "response": null
+    },
+    {
+      "id": "U-04",
+      "category": "unit",
+      "severity": "P1",
+      "title": "知识库-完全无关输入返回空候选",
+      "status": "PASS",
+      "http_status": null,
+      "latency_ms": 0.0,
+      "n_records": null,
+      "hard_total": 3,
+      "hard_pass": 3,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "indicator_mapping",
+          "field": "未知“完全不存在的指标XYZ”",
+          "expected": [],
+          "actual": [],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "未知“上证指数”",
+          "expected": [],
+          "actual": [],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "未知“zxcvbnm”",
+          "expected": [],
+          "actual": [],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "(纯函数调用，无网络)",
+      "error": null,
+      "response": null
+    },
+    {
+      "id": "U-05",
+      "category": "unit",
+      "severity": "P0",
+      "title": "知识库-易混淆口径仍返回候选（有误映射风险）",
+      "status": "PASS",
+      "http_status": null,
+      "latency_ms": 0.0,
+      "n_records": null,
+      "hard_total": 1,
+      "hard_pass": 1,
+      "soft_total": 1,
+      "soft_pass": 1,
+      "assertions": [
+        {
+          "dim": "anti_hallucination",
+          "field": "“螺纹钢表观消费量”不应精确命中库存口径",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": "实际 top={'indicator_id': 'COMMODITY_REBAR_SOCIAL_INVENTORY', 'standard_name': '螺纹钢社会库存', 'score': 0.4615}"
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "候选得分 < 0.95（不触发自动回填）",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": false,
+          "note": "score=0.4615"
+        }
+      ],
+      "input": "(纯函数调用，无网络)",
+      "error": null,
+      "response": null
+    },
+    {
+      "id": "U-06",
+      "category": "unit",
+      "severity": "P1",
+      "title": "知识库-条目字段完整且主键唯一",
+      "status": "PASS",
+      "http_status": null,
+      "latency_ms": 0.0,
+      "n_records": null,
+      "hard_total": 2,
+      "hard_pass": 2,
+      "soft_total": 1,
+      "soft_pass": 1,
+      "assertions": [
+        {
+          "dim": "indicator_mapping",
+          "field": "字段缺失项",
+          "expected": [],
+          "actual": [],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "indicator_id 唯一",
+          "expected": 6,
+          "actual": 6,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "知识库规模",
+          "expected": 6,
+          "actual": 6,
+          "ok": true,
+          "hard": false,
+          "note": "覆盖度有限，期货/指数/个股等常见数据均超纲"
+        }
+      ],
+      "input": "(纯函数调用，无网络)",
+      "error": null,
+      "response": null
+    },
+    {
+      "id": "U-07",
+      "category": "unit",
+      "severity": "P0",
+      "title": "后处理-幻觉指标 ID 被清空",
+      "status": "PASS",
+      "http_status": null,
+      "latency_ms": 0.0,
+      "n_records": null,
+      "hard_total": 3,
+      "hard_pass": 3,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "anti_hallucination",
+          "field": "indicator_id",
+          "expected": null,
+          "actual": null,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "standard_indicator",
+          "expected": null,
+          "actual": null,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "anti_hallucination",
+          "field": "category",
+          "expected": null,
+          "actual": null,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "(纯函数调用，无网络)",
+      "error": null,
+      "response": null
+    },
+    {
+      "id": "U-08",
+      "category": "unit",
+      "severity": "P0",
+      "title": "后处理-候选≥0.95 自动回填指标",
+      "status": "PASS",
+      "http_status": null,
+      "latency_ms": 0.0,
+      "n_records": null,
+      "hard_total": 2,
+      "hard_pass": 2,
+      "soft_total": 2,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "indicator_mapping",
+          "field": "indicator_id 自动回填",
+          "expected": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "actual": "COMMODITY_REBAR_SOCIAL_INVENTORY",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "standard_indicator 自动回填",
+          "expected": "螺纹钢社会库存",
+          "actual": "螺纹钢社会库存",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "category 是否一并回填（当前实现未回填）",
+          "expected": "商品/库存",
+          "actual": null,
+          "ok": false,
+          "hard": false,
+          "note": "缺陷 F-04：回填时漏写 category / frequency"
+        },
+        {
+          "dim": "indicator_mapping",
+          "field": "frequency 是否一并回填（当前实现未回填）",
+          "expected": "weekly",
+          "actual": null,
+          "ok": false,
+          "hard": false,
+          "note": "缺陷 F-04"
+        }
+      ],
+      "input": "(纯函数调用，无网络)",
+      "error": null,
+      "response": null
+    },
+    {
+      "id": "U-09",
+      "category": "unit",
+      "severity": "P0",
+      "title": "后处理-缺日期/数值/单位强制转人工审核",
+      "status": "PASS",
+      "http_status": null,
+      "latency_ms": 0.0,
+      "n_records": null,
+      "hard_total": 6,
+      "hard_pass": 6,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "status",
+          "field": "缺少完整日期 → status",
+          "expected": "pending_review",
+          "actual": "pending_review",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "warnings",
+          "field": "缺少完整日期 → 告警",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "缺少数值 → status",
+          "expected": "pending_review",
+          "actual": "pending_review",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "warnings",
+          "field": "缺少数值 → 告警",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "缺少单位 → status",
+          "expected": "pending_review",
+          "actual": "pending_review",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "warnings",
+          "field": "缺少单位 → 告警",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "(纯函数调用，无网络)",
+      "error": null,
+      "response": null
+    },
+    {
+      "id": "U-10",
+      "category": "unit",
+      "severity": "P1",
+      "title": "后处理-confidence<0.95 强制转人工审核",
+      "status": "PASS",
+      "http_status": null,
+      "latency_ms": 0.0,
+      "n_records": null,
+      "hard_total": 1,
+      "hard_pass": 1,
+      "soft_total": 1,
+      "soft_pass": 1,
+      "assertions": [
+        {
+          "dim": "status",
+          "field": "confidence=0.94 → pending_review",
+          "expected": "pending_review",
+          "actual": "pending_review",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "status",
+          "field": "confidence=0.96 且字段齐全 → ready",
+          "expected": "ready",
+          "actual": "ready",
+          "ok": true,
+          "hard": false,
+          "note": "缺陷 F-05：阈值 0.95 过严，ready 状态实际很难达成"
+        }
+      ],
+      "input": "(纯函数调用，无网络)",
+      "error": null,
+      "response": null
+    },
+    {
+      "id": "U-11",
+      "category": "unit",
+      "severity": "P1",
+      "title": "后处理-数值 0 不等于缺失",
+      "status": "PASS",
+      "http_status": null,
+      "latency_ms": 0.0,
+      "n_records": null,
+      "hard_total": 2,
+      "hard_pass": 2,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "value",
+          "field": "value 保持 0",
+          "expected": 0.0,
+          "actual": 0.0,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "warnings",
+          "field": "不得出现“缺少数值”告警",
+          "expected": false,
+          "actual": false,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "(纯函数调用，无网络)",
+      "error": null,
+      "response": null
+    },
+    {
+      "id": "U-12",
+      "category": "unit",
+      "severity": "P0",
+      "title": "Schema-strict 契约（全字段 required + 禁止额外属性）",
+      "status": "PASS",
+      "http_status": null,
+      "latency_ms": 0.0,
+      "n_records": null,
+      "hard_total": 6,
+      "hard_pass": 6,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "顶层 additionalProperties",
+          "expected": false,
+          "actual": false,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "api_contract",
+          "field": "顶层 required",
+          "expected": [
+            "global_warnings",
+            "records"
+          ],
+          "actual": [
+            "global_warnings",
+            "records"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "api_contract",
+          "field": "record additionalProperties",
+          "expected": false,
+          "actual": false,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "api_contract",
+          "field": "所有字段均在 required",
+          "expected": [],
+          "actual": [],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "api_contract",
+          "field": "status 枚举",
+          "expected": [
+            "ready",
+            "pending_review"
+          ],
+          "actual": [
+            "ready",
+            "pending_review"
+          ],
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "api_contract",
+          "field": "change 允许 null",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "(纯函数调用，无网络)",
+      "error": null,
+      "response": null
+    },
+    {
+      "id": "U-13",
+      "category": "unit",
+      "severity": "P1",
+      "title": "Schema-pydantic 模型可校验且能拦截越界值",
+      "status": "PASS",
+      "http_status": null,
+      "latency_ms": 0.0,
+      "n_records": null,
+      "hard_total": 3,
+      "hard_pass": 3,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "合法记录可构造",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "api_contract",
+          "field": "confidence=1.5 应被拦截",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "api_contract",
+          "field": "ExtractionResult 可实例化",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "(纯函数调用，无网络)",
+      "error": null,
+      "response": null
+    },
+    {
+      "id": "U-14",
+      "category": "unit",
+      "severity": "P1",
+      "title": "实现-Schema 模型被业务代码引用（防死代码）",
+      "status": "PASS",
+      "http_status": null,
+      "latency_ms": 0.0,
+      "n_records": null,
+      "hard_total": 0,
+      "hard_pass": 0,
+      "soft_total": 1,
+      "soft_pass": 1,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "app/ 下引用 schemas 的文件",
+          "expected": [],
+          "actual": [],
+          "ok": true,
+          "hard": false,
+          "note": "缺陷 F-03：schemas.py 是死代码，响应无 pydantic 输出校验"
+        }
+      ],
+      "input": "(纯函数调用，无网络)",
+      "error": null,
+      "response": null
+    },
+    {
+      "id": "U-15",
+      "category": "unit",
+      "severity": "P0",
+      "title": "依赖层-LLM 已切换到 DeepSeek 且 .env 被加载",
+      "status": "PASS",
+      "http_status": null,
+      "latency_ms": 0.0,
+      "n_records": null,
+      "hard_total": 3,
+      "hard_pass": 3,
+      "soft_total": 0,
+      "soft_pass": 0,
+      "assertions": [
+        {
+          "dim": "api_contract",
+          "field": "base_url",
+          "expected": "https://api.deepseek.com",
+          "actual": "https://api.deepseek.com",
+          "ok": true,
+          "hard": true,
+          "note": ""
+        },
+        {
+          "dim": "api_contract",
+          "field": "模型名非已下线的 deepseek-chat",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": "实际 model=deepseek-flash"
+        },
+        {
+          "dim": "api_contract",
+          "field": "client 已构造（Key 读取成功）",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "(纯函数调用，无网络)",
+      "error": null,
+      "response": null
+    },
+    {
+      "id": "U-16",
+      "category": "unit",
+      "severity": "P2",
+      "title": "后处理-warnings 不重复累积",
+      "status": "PASS",
+      "http_status": null,
+      "latency_ms": 0.0,
+      "n_records": null,
+      "hard_total": 1,
+      "hard_pass": 1,
+      "soft_total": 1,
+      "soft_pass": 1,
+      "assertions": [
+        {
+          "dim": "warnings",
+          "field": "告警去重",
+          "expected": 3,
+          "actual": 3,
+          "ok": true,
+          "hard": false,
+          "note": "缺陷：warnings 直接 append，重复调用会累积"
+        },
+        {
+          "dim": "warnings",
+          "field": "三类缺失告警齐全",
+          "expected": true,
+          "actual": true,
+          "ok": true,
+          "hard": true,
+          "note": ""
+        }
+      ],
+      "input": "(纯函数调用，无网络)",
+      "error": null,
+      "response": null
+    }
+  ]
+}
